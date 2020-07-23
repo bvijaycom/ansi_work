@@ -1,0 +1,17 @@
+---
+- name: "url monitering"
+  hosts: localhost
+  roles:
+  - role: url_moniter
+    delegate_host: localhost
+    email_to: support@skylarkinfo.com
+    email_cc: navaneethan@skylarkinfo.com,darmesh@skylarkinfo.com,selva@skylarkinfo.com,nilober@skylarkinfo.com
+    mail_alert: true
+    slack_alert: false
+    smtp_host: smtp.gmail.com
+    smtp_port: 587
+    smtp_username: monitoring@skylarkinfo.com
+   # smtp_password: tn09bk1329
+    template_storage_path: /home/ansible/monitor_url.txt
+                       
+                       

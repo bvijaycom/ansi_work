@@ -1,0 +1,22 @@
+---
+- name: "Url Monitering"
+  hosts: localhost
+  tasks:
+  - name: Check that you can connect (GET) to a page and it returns a status 200
+    uri:
+      url: "{{item}}"
+      method: GET
+      status_code: 200
+    loop:
+      - http://www.skylarkinfo.com
+      - http://192.168.10.14
+      - http://dsr.skylarkinfo.com/skycrm
+      - http://mail.skylarkinfo.com/
+      - http://192.168.10.15
+    register: results
+    ignore_errors: true
+  - debug:
+      msg: "{{results.results | json_query('[].status[]')}}"
+  - debug:
+      msg: "Domain went to unreachable state {{results.results | json_query('[].item[]'}}"
+    when:  results.results | json_query('[].status[]') != '200'

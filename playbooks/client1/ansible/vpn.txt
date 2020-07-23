@@ -1,0 +1,33 @@
+category            : VPN
+customer_gateway_id : cgw-02910bbee2dc08542
+static_routes_only  : True
+tags_name           : SKYLARK-VPN
+State               : available
+type                : ipsec.1
+vpn_connection_id   : vpn-0c32629592ec70968
+vpn_gateway_id      : vgw-0832a84cf2998ae2c
+
+vgw_telemetry:
+--------------
+
+status - DOWN
+status_message - 
+last_status_change - 2019-05-20T05:46:22+00:00
+outside_ip_address - 3.214.8.167
+accepted_route_count - 2
+
+status - DOWN
+status_message - 
+last_status_change - 2019-05-07T07:17:23+00:00
+outside_ip_address - 52.6.226.237
+accepted_route_count - 2
+
+routes:
+-------
+
+state - available
+destination_cidr_block - 172.22.1.0/24
+
+state - available
+destination_cidr_block - 192.168.10.0/24
+

@@ -1,0 +1,9 @@
+---
+- name: "find Disk usgae"
+  hosts: zabbix
+  roles:
+  - role: disk_space
+    delegate_host: localhost
+    client_name: skylark
+    email_to: jinojoe@gmail.com
+    email_cc: jjino@protonmail.com

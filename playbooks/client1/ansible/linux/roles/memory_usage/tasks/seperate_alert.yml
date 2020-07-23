@@ -1,0 +1,28 @@
+---
+- name: "Show memory usage"
+  script: jjino.sh
+  register: result1
+
+- name: "Copy the (user) Memeory usage precentage"
+  template:
+    src: temp2.j2
+    dest: /home/ansible/memory_usage.txt
+  delegate_to: "{{ delegate_host | default('localhost') }}"
+  when: result1.stdout != ""
+
+- name: "Mail the Condent"
+  mail:
+    host: "{{smtp_host}}" # smtp.gmail.com
+    port: "{{smtp_port}}" # 587
+    username: "{{smtp_username}}"
+    password: "{{smtp_password}}" 
+    to: "{{email_to}}"
+    cc: "{{email_cc}}"
+    subject: "{{ clienti_name }} Memory Report"
+    body: body: "{{ lookup('file', '/home/ansible/memory_usage.txt') }}"
+    attach:
+      - /home/ansible/memory_usage.txt
+    body: System has been generated memory report successfully.
+  delegate_to: "{{ delegate_host | default('localhost') }}"
+  when: result1.stdout != ""
+  run_once: True

@@ -1,0 +1,32 @@
+---
+- name: check the windows update and install it accordingly
+  hosts: ch1234
+  tasks:
+   # Check if there are missing updates
+  - block:
+    - name: Check for missing updates.
+      win_updates: state=searched
+      register: update_count
+    
+     #Install missing updates only if at least one is missing
+  - block:
+    - name: Install missing updates.
+      win_updates:
+       category_name:
+          – SecurityUpdates
+      register: update_result
+    - name: Reboot, if needed.
+      win_reboot:
+      when: update_result.reboot_required
+    when: update_count.found_update_count|int >= 1
+#
+#
+#
+#    - name: Install only particular updates based on the KB numbers
+#      win_updates:
+#    category_name:
+#    - SecurityUpdates
+#    whitelist:
+#    - KB4056892
+#    - KB4073117
+#

@@ -1,0 +1,1296 @@
+HPiLO Information:
+------------------
+
+hw_bios_date: 10/02/2018
+hw_bios_version: U30
+hw_eth0:
+  macaddress: D0:67:26:CA:71:48
+  macaddress_dash: D0-67-26-CA-71-48
+hw_eth1:
+  macaddress: D0:67:26:CA:71:49
+  macaddress_dash: D0-67-26-CA-71-49
+hw_eth2:
+  macaddress: D0:67:26:CA:71:4A
+  macaddress_dash: D0-67-26-CA-71-4A
+hw_eth3:
+  macaddress: D0:67:26:CA:71:4B
+  macaddress_dash: D0-67-26-CA-71-4B
+hw_eth4:
+  macaddress: 98:F2:B3:30:7B:90
+  macaddress_dash: 98-F2-B3-30-7B-90
+hw_eth5:
+  macaddress: 98:F2:B3:30:7B:94
+  macaddress_dash: 98-F2-B3-30-7B-94
+hw_eth_ilo:
+  macaddress: D0:67:26:CA:71:46
+  macaddress_dash: D0-67-26-CA-71-46
+hw_health:
+  fans:
+    Fan 1:
+      label: Fan 1
+      speed:
+      - 11
+      - Percentage
+      status: OK
+      zone: System
+    Fan 2:
+      label: Fan 2
+      speed:
+      - 11
+      - Percentage
+      status: OK
+      zone: System
+    Fan 3:
+      label: Fan 3
+      speed:
+      - 14
+      - Percentage
+      status: OK
+      zone: System
+    Fan 4:
+      label: Fan 4
+      speed:
+      - 18
+      - Percentage
+      status: OK
+      zone: System
+    Fan 5:
+      label: Fan 5
+      speed:
+      - 23
+      - Percentage
+      status: OK
+      zone: System
+    Fan 6:
+      label: Fan 6
+      speed:
+      - 23
+      - Percentage
+      status: OK
+      zone: System
+  firmware_information:
+    Embedded Video Controller: '2.5'
+    HP FlexFabric 10Gb 2port 534FLR-SFP+ Adapter: 7.17.19
+    HPE Smart Array E208i-p SR Gen10: '1.66'
+    HPE Smart Array P408i-a SR Gen10: '1.66'
+    HPE Smart Storage Battery 1 Firmware: '0.60'
+    Innovation Engine (IE) Firmware: 0.1.5.2
+    Intelligent Platform Abstraction Data: 7.2.0 Build 30
+    Intelligent Provisioning: 3.00.382
+    Network Controller: 20.12.41
+    Power Management Controller FW Bootloader: '1.1'
+    Power Management Controller Firmware: 1.0.4
+    Redundant System ROM: U30 v1.26 (11/14/2017)
+    Server Platform Services (SPS) Firmware: 4.0.4.393
+    System Programmable Logic Device: '0x2A'
+    System ROM: U30 v1.46 (10/02/2018)
+    iLO 5: 1.39 Dec 05 2018
+  health_at_a_glance:
+    battery:
+      status: OK
+    bios_hardware:
+      status: OK
+    fans:
+      redundancy: Redundant
+      status: OK
+    memory:
+      status: OK
+    network:
+      status: OK
+    power_supplies:
+      redundancy: Redundant
+      status: OK
+    processor:
+      status: OK
+    storage:
+      status: OK
+    temperature:
+      status: OK
+  memory:
+    advanced_memory_protection:
+      amp_mode_status: Advanced ECC
+      available_amp_modes: Advanced ECC, Online Spare (Rank Sparing), Intrasocket
+        Mirroring
+      configured_amp_mode: Advanced ECC
+    memory_details:
+      CPU_1:
+        socket 1:
+          frequency: 2666 MHz
+          hp_smart_memory: 'Yes'
+          minimum_voltage: 1.20 v
+          part:
+            number: 840757-091
+          ranks: 1
+          size: 16384 MB
+          socket: 1
+          status: Good, In Use
+          technology: RDIMM
+          type: DIMM DDR4
+        socket 10:
+          frequency: 2666 MHz
+          hp_smart_memory: 'Yes'
+          minimum_voltage: 1.20 v
+          part:
+            number: 840757-091
+          ranks: 1
+          size: 16384 MB
+          socket: 10
+          status: Good, In Use
+          technology: RDIMM
+          type: DIMM DDR4
+        socket 11:
+          frequency: 2666 MHz
+          hp_smart_memory: 'Yes'
+          minimum_voltage: 1.20 v
+          part:
+            number: 840755-091
+          ranks: 1
+          size: 8192 MB
+          socket: 11
+          status: Good, In Use
+          technology: RDIMM
+          type: DIMM DDR4
+        socket 12:
+          frequency: 2666 MHz
+          hp_smart_memory: 'Yes'
+          minimum_voltage: 1.20 v
+          part:
+            number: 840755-091
+          ranks: 1
+          size: 8192 MB
+          socket: 12
+          status: Good, In Use
+          technology: RDIMM
+          type: DIMM DDR4
+        socket 2:
+          frequency: 2666 MHz
+          hp_smart_memory: 'Yes'
+          minimum_voltage: 1.20 v
+          part:
+            number: 840755-091
+          ranks: 1
+          size: 8192 MB
+          socket: 2
+          status: Good, In Use
+          technology: RDIMM
+          type: DIMM DDR4
+        socket 3:
+          frequency: 2666 MHz
+          hp_smart_memory: 'Yes'
+          minimum_voltage: 1.20 v
+          part:
+            number: 840757-091
+          ranks: 1
+          size: 16384 MB
+          socket: 3
+          status: Good, In Use
+          technology: RDIMM
+          type: DIMM DDR4
+        socket 4:
+          frequency: 2666 MHz
+          hp_smart_memory: 'Yes'
+          minimum_voltage: 1.20 v
+          part:
+            number: 840755-091
+          ranks: 1
+          size: 8192 MB
+          socket: 4
+          status: Good, In Use
+          technology: RDIMM
+          type: DIMM DDR4
+        socket 5:
+          frequency: 2666 MHz
+          hp_smart_memory: 'Yes'
+          minimum_voltage: 1.20 v
+          part:
+            number: 840757-091
+          ranks: 1
+          size: 16384 MB
+          socket: 5
+          status: Good, In Use
+          technology: RDIMM
+          type: DIMM DDR4
+        socket 6:
+          frequency: 2666 MHz
+          hp_smart_memory: 'Yes'
+          minimum_voltage: 1.20 v
+          part:
+            number: 840755-091
+          ranks: 1
+          size: 8192 MB
+          socket: 6
+          status: Good, In Use
+          technology: RDIMM
+          type: DIMM DDR4
+        socket 7:
+          frequency: 2666 MHz
+          hp_smart_memory: 'Yes'
+          minimum_voltage: 1.20 v
+          part:
+            number: 840757-091
+          ranks: 1
+          size: 16384 MB
+          socket: 7
+          status: Good, In Use
+          technology: RDIMM
+          type: DIMM DDR4
+        socket 8:
+          frequency: 2666 MHz
+          hp_smart_memory: 'Yes'
+          minimum_voltage: 1.20 v
+          part:
+            number: 840757-091
+          ranks: 1
+          size: 16384 MB
+          socket: 8
+          status: Good, In Use
+          technology: RDIMM
+          type: DIMM DDR4
+        socket 9:
+          frequency: 2666 MHz
+          hp_smart_memory: 'Yes'
+          minimum_voltage: 1.20 v
+          part:
+            number: 840755-091
+          ranks: 1
+          size: 8192 MB
+          socket: 9
+          status: Good, In Use
+          technology: RDIMM
+          type: DIMM DDR4
+      CPU_2:
+        socket 1:
+          frequency: N/A
+          hp_smart_memory: N/A
+          minimum_voltage: N/A
+          part:
+            number: N/A
+          ranks: N/A
+          size: N/A
+          socket: 1
+          status: Not Present
+          technology: N/A
+          type: N/A
+        socket 10:
+          frequency: N/A
+          hp_smart_memory: N/A
+          minimum_voltage: N/A
+          part:
+            number: N/A
+          ranks: N/A
+          size: N/A
+          socket: 10
+          status: Not Present
+          technology: N/A
+          type: N/A
+        socket 11:
+          frequency: N/A
+          hp_smart_memory: N/A
+          minimum_voltage: N/A
+          part:
+            number: N/A
+          ranks: N/A
+          size: N/A
+          socket: 11
+          status: Not Present
+          technology: N/A
+          type: N/A
+        socket 12:
+          frequency: N/A
+          hp_smart_memory: N/A
+          minimum_voltage: N/A
+          part:
+            number: N/A
+          ranks: N/A
+          size: N/A
+          socket: 12
+          status: Not Present
+          technology: N/A
+          type: N/A
+        socket 2:
+          frequency: N/A
+          hp_smart_memory: N/A
+          minimum_voltage: N/A
+          part:
+            number: N/A
+          ranks: N/A
+          size: N/A
+          socket: 2
+          status: Not Present
+          technology: N/A
+          type: N/A
+        socket 3:
+          frequency: N/A
+          hp_smart_memory: N/A
+          minimum_voltage: N/A
+          part:
+            number: N/A
+          ranks: N/A
+          size: N/A
+          socket: 3
+          status: Not Present
+          technology: N/A
+          type: N/A
+        socket 4:
+          frequency: N/A
+          hp_smart_memory: N/A
+          minimum_voltage: N/A
+          part:
+            number: N/A
+          ranks: N/A
+          size: N/A
+          socket: 4
+          status: Not Present
+          technology: N/A
+          type: N/A
+        socket 5:
+          frequency: N/A
+          hp_smart_memory: N/A
+          minimum_voltage: N/A
+          part:
+            number: N/A
+          ranks: N/A
+          size: N/A
+          socket: 5
+          status: Not Present
+          technology: N/A
+          type: N/A
+        socket 6:
+          frequency: N/A
+          hp_smart_memory: N/A
+          minimum_voltage: N/A
+          part:
+            number: N/A
+          ranks: N/A
+          size: N/A
+          socket: 6
+          status: Not Present
+          technology: N/A
+          type: N/A
+        socket 7:
+          frequency: N/A
+          hp_smart_memory: N/A
+          minimum_voltage: N/A
+          part:
+            number: N/A
+          ranks: N/A
+          size: N/A
+          socket: 7
+          status: Not Present
+          technology: N/A
+          type: N/A
+        socket 8:
+          frequency: N/A
+          hp_smart_memory: N/A
+          minimum_voltage: N/A
+          part:
+            number: N/A
+          ranks: N/A
+          size: N/A
+          socket: 8
+          status: Not Present
+          technology: N/A
+          type: N/A
+        socket 9:
+          frequency: N/A
+          hp_smart_memory: N/A
+          minimum_voltage: N/A
+          part:
+            number: N/A
+          ranks: N/A
+          size: N/A
+          socket: 9
+          status: Not Present
+          technology: N/A
+          type: N/A
+    memory_details_summary:
+      cpu_1:
+        number_of_sockets: 12
+        operating_frequency: 2400 MHz
+        operating_voltage: 1.20 v
+        total_memory_size: 144 GB
+      cpu_2:
+        number_of_sockets: 12
+        operating_frequency: 2400 MHz
+        operating_voltage: 1.20 v
+        total_memory_size: N/A
+  nic_information:
+    Embedded:
+      ip_address: ''
+      location: Embedded
+      mac_address: d0:67:26:ca:71:4b
+      network_port: Port 4
+      port_description: Network Controller
+      status: OK
+  power_supplies:
+    Battery 1:
+      capacity: 96 Watts
+      firmware_version: '0.60'
+      label: Battery 1
+      model: 875241-B21
+      present: 'Yes'
+      serial_number: 6WQXL0AB2A87X0
+      spare: 878643-001
+      status: OK
+    Power Supply 1:
+      capacity: 1600 Watts
+      firmware_version: '1.00'
+      hotplug_capable: 'Yes'
+      label: Power Supply 1
+      model: 830272-B21
+      pds: 'No'
+      present: 'Yes'
+      serial_number: 5FJCC0AHLA700L
+      spare: 863373-001
+      status: Good, In Use
+    Power Supply 2:
+      capacity: 1600 Watts
+      firmware_version: '1.00'
+      hotplug_capable: 'Yes'
+      label: Power Supply 2
+      model: 830272-B21
+      pds: 'No'
+      present: 'Yes'
+      serial_number: 5FJCC0AHLA700K
+      spare: 863373-001
+      status: Good, In Use
+  power_supply_summary:
+    high_efficiency_mode: Balanced
+    hp_power_discovery_services_redundancy_status: N/A
+    power_management_controller_firmware_version: 1.0.4
+    power_system_redundancy: Redundant
+    present_power_reading: 157 Watts
+  processors:
+    Proc 1:
+      execution_technology: 10/10 cores; 20 threads
+      internal_l1_cache: 640 KB
+      internal_l2_cache: 10240 KB
+      internal_l3_cache: 14080 KB
+      label: Proc 1
+      memory_technology: 64-bit Capable
+      name: Intel(R) Xeon(R) Silver 4114 CPU @ 2.20GHz
+      speed: 2200 MHz
+      status: OK
+  storage:
+    Controller in Slot 3:
+      controller_status: OK
+      drive_enclosures:
+      - drive_bay: 4
+        label: Port 1I Box 6
+        status: OK
+      encryption_csp_status: OK
+      encryption_self_test_status: OK
+      encryption_status: Not Enabled
+      fw_version: '1.66'
+      label: Controller in Slot 3
+      logical_drives:
+      - capacity: 279 GiB
+        encryption_status: Not Encrypted
+        fault_tolerance: RAID 1
+        label: '01'
+        logical_drive_type: Data LUN
+        physical_drives:
+        - capacity: 279 GiB
+          drive_configuration: Configured
+          encryption_status: Not Encrypted
+          fw_version: HPD2
+          label: Port 1I Box 6 Bay 1
+          location: Port 1I Box 6 Bay 1
+          marketing_capacity: 300 GB
+          media_type: HDD
+          model: EG000300JWFVB
+          serial_number: Z7P0A18GFQVE1752
+          status: OK
+        - capacity: 279 GiB
+          drive_configuration: Configured
+          encryption_status: Not Encrypted
+          fw_version: HPD2
+          label: Port 1I Box 6 Bay 2
+          location: Port 1I Box 6 Bay 2
+          marketing_capacity: 300 GB
+          media_type: HDD
+          model: EG000300JWFVB
+          serial_number: Z7P0A19YFQVE1752
+          status: OK
+        status: OK
+      model: HPE Smart Array E208i-p SR Gen10
+      serial_number: 'PEYHL0ARCA50NE '
+      status: OK
+    Controller on System Board:
+      cache_module_memory: 2097152 KB
+      cache_module_serial_num: '               '
+      cache_module_status: OK
+      controller_status: OK
+      drive_enclosures:
+      - drive_bay: 4
+        label: Port 1I Box 3
+        status: OK
+      - drive_bay: 4
+        label: Port 2I Box 3
+        status: OK
+      encryption_csp_status: OK
+      encryption_self_test_status: OK
+      encryption_status: Not Enabled
+      fw_version: '1.66'
+      label: Controller on System Board
+      logical_drives:
+      - capacity: 199 GiB
+        encryption_status: Not Encrypted
+        fault_tolerance: RAID 5
+        label: '01'
+        logical_drive_type: Data LUN
+        physical_drives:
+        - capacity: 894 GiB
+          drive_configuration: Configured
+          encryption_status: Not Encrypted
+          fw_version: HPG8
+          label: Port 1I Box 3 Bay 4
+          location: Port 1I Box 3 Bay 4
+          marketing_capacity: 960 GB
+          media_type: SSD
+          model: VK000960GWEZD
+          serial_number: 172519A65582
+          status: OK
+        - capacity: 894 GiB
+          drive_configuration: Configured
+          encryption_status: Not Encrypted
+          fw_version: HPG8
+          label: Port 1I Box 3 Bay 3
+          location: Port 1I Box 3 Bay 3
+          marketing_capacity: 960 GB
+          media_type: SSD
+          model: VK000960GWEZD
+          serial_number: 172519A65565
+          status: OK
+        - capacity: 894 GiB
+          drive_configuration: Configured
+          encryption_status: Not Encrypted
+          fw_version: HPG8
+          label: Port 1I Box 3 Bay 2
+          location: Port 1I Box 3 Bay 2
+          marketing_capacity: 960 GB
+          media_type: SSD
+          model: VK000960GWEZD
+          serial_number: 172519A64189
+          status: OK
+        - capacity: 894 GiB
+          drive_configuration: Configured
+          encryption_status: Not Encrypted
+          fw_version: HPG8
+          label: Port 1I Box 3 Bay 1
+          location: Port 1I Box 3 Bay 1
+          marketing_capacity: 960 GB
+          media_type: SSD
+          model: VK000960GWEZD
+          serial_number: 172519A655F7
+          status: OK
+        - capacity: 894 GiB
+          drive_configuration: Configured
+          encryption_status: Not Encrypted
+          fw_version: HPG8
+          label: Port 2I Box 3 Bay 5
+          location: Port 2I Box 3 Bay 5
+          marketing_capacity: 960 GB
+          media_type: SSD
+          model: VK000960GWEZD
+          serial_number: 172519A64133
+          status: OK
+        status: OK
+      - capacity: 256 GiB
+        encryption_status: Not Encrypted
+        fault_tolerance: RAID 5
+        label: '02'
+        logical_drive_type: Data LUN
+        physical_drives:
+        - capacity: 894 GiB
+          drive_configuration: Configured
+          encryption_status: Not Encrypted
+          fw_version: HPG8
+          label: Port 1I Box 3 Bay 4
+          location: Port 1I Box 3 Bay 4
+          marketing_capacity: 960 GB
+          media_type: SSD
+          model: VK000960GWEZD
+          serial_number: 172519A65582
+          status: OK
+        - capacity: 894 GiB
+          drive_configuration: Configured
+          encryption_status: Not Encrypted
+          fw_version: HPG8
+          label: Port 1I Box 3 Bay 3
+          location: Port 1I Box 3 Bay 3
+          marketing_capacity: 960 GB
+          media_type: SSD
+          model: VK000960GWEZD
+          serial_number: 172519A65565
+          status: OK
+        - capacity: 894 GiB
+          drive_configuration: Configured
+          encryption_status: Not Encrypted
+          fw_version: HPG8
+          label: Port 1I Box 3 Bay 2
+          location: Port 1I Box 3 Bay 2
+          marketing_capacity: 960 GB
+          media_type: SSD
+          model: VK000960GWEZD
+          serial_number: 172519A64189
+          status: OK
+        - capacity: 894 GiB
+          drive_configuration: Configured
+          encryption_status: Not Encrypted
+          fw_version: HPG8
+          label: Port 1I Box 3 Bay 1
+          location: Port 1I Box 3 Bay 1
+          marketing_capacity: 960 GB
+          media_type: SSD
+          model: VK000960GWEZD
+          serial_number: 172519A655F7
+          status: OK
+        - capacity: 894 GiB
+          drive_configuration: Configured
+          encryption_status: Not Encrypted
+          fw_version: HPG8
+          label: Port 2I Box 3 Bay 5
+          location: Port 2I Box 3 Bay 5
+          marketing_capacity: 960 GB
+          media_type: SSD
+          model: VK000960GWEZD
+          serial_number: 172519A64133
+          status: OK
+        status: OK
+      - capacity: 3120 GiB
+        encryption_status: Not Encrypted
+        fault_tolerance: RAID 5
+        label: '03'
+        logical_drive_type: Data LUN
+        physical_drives:
+        - capacity: 894 GiB
+          drive_configuration: Configured
+          encryption_status: Not Encrypted
+          fw_version: HPG8
+          label: Port 1I Box 3 Bay 4
+          location: Port 1I Box 3 Bay 4
+          marketing_capacity: 960 GB
+          media_type: SSD
+          model: VK000960GWEZD
+          serial_number: 172519A65582
+          status: OK
+        - capacity: 894 GiB
+          drive_configuration: Configured
+          encryption_status: Not Encrypted
+          fw_version: HPG8
+          label: Port 1I Box 3 Bay 3
+          location: Port 1I Box 3 Bay 3
+          marketing_capacity: 960 GB
+          media_type: SSD
+          model: VK000960GWEZD
+          serial_number: 172519A65565
+          status: OK
+        - capacity: 894 GiB
+          drive_configuration: Configured
+          encryption_status: Not Encrypted
+          fw_version: HPG8
+          label: Port 1I Box 3 Bay 2
+          location: Port 1I Box 3 Bay 2
+          marketing_capacity: 960 GB
+          media_type: SSD
+          model: VK000960GWEZD
+          serial_number: 172519A64189
+          status: OK
+        - capacity: 894 GiB
+          drive_configuration: Configured
+          encryption_status: Not Encrypted
+          fw_version: HPG8
+          label: Port 1I Box 3 Bay 1
+          location: Port 1I Box 3 Bay 1
+          marketing_capacity: 960 GB
+          media_type: SSD
+          model: VK000960GWEZD
+          serial_number: 172519A655F7
+          status: OK
+        - capacity: 894 GiB
+          drive_configuration: Configured
+          encryption_status: Not Encrypted
+          fw_version: HPG8
+          label: Port 2I Box 3 Bay 5
+          location: Port 2I Box 3 Bay 5
+          marketing_capacity: 960 GB
+          media_type: SSD
+          model: VK000960GWEZD
+          serial_number: 172519A64133
+          status: OK
+        status: OK
+      model: HPE Smart Array P408i-a SR Gen10
+      serial_number: 'PEYHC0CRHAA442 '
+      status: OK
+  storage_discovery_status: Discovery Complete
+  temperature:
+    01-Inlet Ambient:
+      caution:
+      - 42
+      - Celsius
+      critical:
+      - 47
+      - Celsius
+      currentreading:
+      - 23
+      - Celsius
+      label: 01-Inlet Ambient
+      location: Ambient
+      status: OK
+    02-CPU 1:
+      caution:
+      - 70
+      - Celsius
+      critical: N/A
+      currentreading:
+      - 40
+      - Celsius
+      label: 02-CPU 1
+      location: CPU
+      status: OK
+    03-CPU 2:
+      caution: N/A
+      critical: N/A
+      currentreading: N/A
+      label: 03-CPU 2
+      location: CPU
+      status: Not Installed
+    04-P1 DIMM 1-6:
+      caution:
+      - 90
+      - Celsius
+      critical: N/A
+      currentreading:
+      - 32
+      - Celsius
+      label: 04-P1 DIMM 1-6
+      location: Memory
+      status: OK
+    06-P1 DIMM 7-12:
+      caution:
+      - 90
+      - Celsius
+      critical: N/A
+      currentreading:
+      - 31
+      - Celsius
+      label: 06-P1 DIMM 7-12
+      location: Memory
+      status: OK
+    08-P2 DIMM 1-6:
+      caution: N/A
+      critical: N/A
+      currentreading: N/A
+      label: 08-P2 DIMM 1-6
+      location: Memory
+      status: Not Installed
+    10-P2 DIMM 7-12:
+      caution: N/A
+      critical: N/A
+      currentreading: N/A
+      label: 10-P2 DIMM 7-12
+      location: Memory
+      status: Not Installed
+    12-HD Max:
+      caution:
+      - 60
+      - Celsius
+      critical: N/A
+      currentreading:
+      - 35
+      - Celsius
+      label: 12-HD Max
+      location: System
+      status: OK
+    13-Exp Bay Drive:
+      caution: N/A
+      critical: N/A
+      currentreading: N/A
+      label: 13-Exp Bay Drive
+      location: System
+      status: Not Installed
+    14-Stor Batt 1:
+      caution:
+      - 60
+      - Celsius
+      critical: N/A
+      currentreading:
+      - 24
+      - Celsius
+      label: 14-Stor Batt 1
+      location: System
+      status: OK
+    15-Front Ambient:
+      caution:
+      - 70
+      - Celsius
+      critical: N/A
+      currentreading:
+      - 27
+      - Celsius
+      label: 15-Front Ambient
+      location: Ambient
+      status: OK
+    16-VR P1:
+      caution:
+      - 115
+      - Celsius
+      critical:
+      - 120
+      - Celsius
+      currentreading:
+      - 33
+      - Celsius
+      label: 16-VR P1
+      location: System
+      status: OK
+    17-VR P2:
+      caution: N/A
+      critical: N/A
+      currentreading: N/A
+      label: 17-VR P2
+      location: System
+      status: Not Installed
+    18-VR P1 Mem 1:
+      caution:
+      - 115
+      - Celsius
+      critical:
+      - 120
+      - Celsius
+      currentreading:
+      - 29
+      - Celsius
+      label: 18-VR P1 Mem 1
+      location: System
+      status: OK
+    19-VR P1 Mem 2:
+      caution:
+      - 115
+      - Celsius
+      critical:
+      - 120
+      - Celsius
+      currentreading:
+      - 29
+      - Celsius
+      label: 19-VR P1 Mem 2
+      location: System
+      status: OK
+    20-VR P2 Mem 1:
+      caution: N/A
+      critical: N/A
+      currentreading: N/A
+      label: 20-VR P2 Mem 1
+      location: System
+      status: Not Installed
+    21-VR P2 Mem 2:
+      caution: N/A
+      critical: N/A
+      currentreading: N/A
+      label: 21-VR P2 Mem 2
+      location: System
+      status: Not Installed
+    22-Chipset:
+      caution:
+      - 100
+      - Celsius
+      critical: N/A
+      currentreading:
+      - 40
+      - Celsius
+      label: 22-Chipset
+      location: System
+      status: OK
+    23-BMC:
+      caution:
+      - 110
+      - Celsius
+      critical:
+      - 115
+      - Celsius
+      currentreading:
+      - 64
+      - Celsius
+      label: 23-BMC
+      location: System
+      status: OK
+    24-BMC Zone:
+      caution:
+      - 90
+      - Celsius
+      critical:
+      - 95
+      - Celsius
+      currentreading:
+      - 40
+      - Celsius
+      label: 24-BMC Zone
+      location: System
+      status: OK
+    25-HD Controller:
+      caution:
+      - 100
+      - Celsius
+      critical: N/A
+      currentreading:
+      - 60
+      - Celsius
+      label: 25-HD Controller
+      location: System
+      status: OK
+    26-HD Cntlr Zone:
+      caution:
+      - 85
+      - Celsius
+      critical:
+      - 90
+      - Celsius
+      currentreading:
+      - 39
+      - Celsius
+      label: 26-HD Cntlr Zone
+      location: System
+      status: OK
+    27-LOM:
+      caution:
+      - 100
+      - Celsius
+      critical: N/A
+      currentreading:
+      - 54
+      - Celsius
+      label: 27-LOM
+      location: System
+      status: OK
+    28-LOM Card:
+      caution:
+      - 100
+      - Celsius
+      critical: N/A
+      currentreading:
+      - 43
+      - Celsius
+      label: 28-LOM Card
+      location: I/O Board
+      status: OK
+    29-LOM Card Zone:
+      caution:
+      - 75
+      - Celsius
+      critical:
+      - 80
+      - Celsius
+      currentreading:
+      - 33
+      - Celsius
+      label: 29-LOM Card Zone
+      location: I/O Board
+      status: OK
+    30-PCI 1:
+      caution: N/A
+      critical: N/A
+      currentreading: N/A
+      label: 30-PCI 1
+      location: I/O Board
+      status: Not Installed
+    31-PCI 1 Zone:
+      caution:
+      - 75
+      - Celsius
+      critical:
+      - 80
+      - Celsius
+      currentreading:
+      - 33
+      - Celsius
+      label: 31-PCI 1 Zone
+      location: I/O Board
+      status: OK
+    32-PCI 2:
+      caution: N/A
+      critical: N/A
+      currentreading: N/A
+      label: 32-PCI 2
+      location: I/O Board
+      status: Not Installed
+    33-PCI 2 Zone:
+      caution:
+      - 75
+      - Celsius
+      critical:
+      - 80
+      - Celsius
+      currentreading:
+      - 34
+      - Celsius
+      label: 33-PCI 2 Zone
+      location: I/O Board
+      status: OK
+    34-PCI 3:
+      caution:
+      - 100
+      - Celsius
+      critical: N/A
+      currentreading:
+      - 50
+      - Celsius
+      label: 34-PCI 3
+      location: I/O Board
+      status: OK
+    35-PCI 3 Zone:
+      caution:
+      - 75
+      - Celsius
+      critical:
+      - 80
+      - Celsius
+      currentreading:
+      - 35
+      - Celsius
+      label: 35-PCI 3 Zone
+      location: I/O Board
+      status: OK
+    48-Mid HD Max:
+      caution: N/A
+      critical: N/A
+      currentreading: N/A
+      label: 48-Mid HD Max
+      location: System
+      status: Not Installed
+    49-Rear HD 4 Max:
+      caution: N/A
+      critical: N/A
+      currentreading: N/A
+      label: 49-Rear HD 4 Max
+      location: System
+      status: Not Installed
+    50-Rear HD 5 Max:
+      caution: N/A
+      critical: N/A
+      currentreading: N/A
+      label: 50-Rear HD 5 Max
+      location: System
+      status: Not Installed
+    51-Rear HD 6 Max:
+      caution:
+      - 60
+      - Celsius
+      critical: N/A
+      currentreading:
+      - 40
+      - Celsius
+      label: 51-Rear HD 6 Max
+      location: System
+      status: OK
+    52-Rear 3LFF Max:
+      caution: N/A
+      critical: N/A
+      currentreading: N/A
+      label: 52-Rear 3LFF Max
+      location: System
+      status: Not Installed
+    53-Battery Zone:
+      caution:
+      - 75
+      - Celsius
+      critical:
+      - 80
+      - Celsius
+      currentreading:
+      - 33
+      - Celsius
+      label: 53-Battery Zone
+      location: System
+      status: OK
+    54-P/S 1 Inlet:
+      caution: N/A
+      critical: N/A
+      currentreading:
+      - 25
+      - Celsius
+      label: 54-P/S 1 Inlet
+      location: Power Supply
+      status: OK
+    55-P/S 2 Inlet:
+      caution: N/A
+      critical: N/A
+      currentreading:
+      - 25
+      - Celsius
+      label: 55-P/S 2 Inlet
+      location: Power Supply
+      status: OK
+    56-P/S 1:
+      caution: N/A
+      critical: N/A
+      currentreading:
+      - 40
+      - Celsius
+      label: 56-P/S 1
+      location: Power Supply
+      status: OK
+    57-P/S 2:
+      caution: N/A
+      critical: N/A
+      currentreading:
+      - 40
+      - Celsius
+      label: 57-P/S 2
+      location: Power Supply
+      status: OK
+    58-P/S 2 Zone:
+      caution:
+      - 75
+      - Celsius
+      critical:
+      - 80
+      - Celsius
+      currentreading:
+      - 27
+      - Celsius
+      label: 58-P/S 2 Zone
+      location: Power Supply
+      status: OK
+    59-E-Fuse:
+      caution:
+      - 100
+      - Celsius
+      critical: N/A
+      currentreading:
+      - 23
+      - Celsius
+      label: 59-E-Fuse
+      location: Power Supply
+      status: OK
+    80-PCI 1 M2:
+      caution: N/A
+      critical: N/A
+      currentreading: N/A
+      label: 80-PCI 1 M2
+      location: System
+      status: Not Installed
+    81-PCI 1 M2 Zn:
+      caution: N/A
+      critical: N/A
+      currentreading: N/A
+      label: 81-PCI 1 M2 Zn
+      location: System
+      status: Not Installed
+    82-PCI 2 M2:
+      caution: N/A
+      critical: N/A
+      currentreading: N/A
+      label: 82-PCI 2 M2
+      location: System
+      status: Not Installed
+    83-PCI 2 M2 Zn:
+      caution: N/A
+      critical: N/A
+      currentreading: N/A
+      label: 83-PCI 2 M2 Zn
+      location: System
+      status: Not Installed
+    84-PCI 3 M2:
+      caution: N/A
+      critical: N/A
+      currentreading: N/A
+      label: 84-PCI 3 M2
+      location: System
+      status: Not Installed
+    85-PCI 3 M2 Zn:
+      caution: N/A
+      critical: N/A
+      currentreading: N/A
+      label: 85-PCI 3 M2 Zn
+      location: System
+      status: Not Installed
+    86-PCI 4 M2:
+      caution: N/A
+      critical: N/A
+      currentreading: N/A
+      label: 86-PCI 4 M2
+      location: System
+      status: Not Installed
+    87-PCI 4 M2 Zn:
+      caution: N/A
+      critical: N/A
+      currentreading: N/A
+      label: 87-PCI 4 M2 Zn
+      location: System
+      status: Not Installed
+    88-PCI 5 M2:
+      caution: N/A
+      critical: N/A
+      currentreading: N/A
+      label: 88-PCI 5 M2
+      location: System
+      status: Not Installed
+    89-PCI 5 M2 Zn:
+      caution: N/A
+      critical: N/A
+      currentreading: N/A
+      label: 89-PCI 5 M2 Zn
+      location: System
+      status: Not Installed
+    90-PCI 6 M2:
+      caution: N/A
+      critical: N/A
+      currentreading: N/A
+      label: 90-PCI 6 M2
+      location: System
+      status: Not Installed
+    91-PCI 6 M2 Zn:
+      caution: N/A
+      critical: N/A
+      currentreading: N/A
+      label: 91-PCI 6 M2 Zn
+      location: System
+      status: Not Installed
+    92-PCI 7 M2:
+      caution: N/A
+      critical: N/A
+      currentreading: N/A
+      label: 92-PCI 7 M2
+      location: System
+      status: Not Installed
+    93-PCI 7 M2 Zn:
+      caution: N/A
+      critical: N/A
+      currentreading: N/A
+      label: 93-PCI 7 M2 Zn
+      location: System
+      status: Not Installed
+    94-PCI 8 M2:
+      caution: N/A
+      critical: N/A
+      currentreading: N/A
+      label: 94-PCI 8 M2
+      location: System
+      status: Not Installed
+    95-PCI 8 M2 Zn:
+      caution: N/A
+      critical: N/A
+      currentreading: N/A
+      label: 95-PCI 8 M2 Zn
+      location: System
+      status: Not Installed
+  vrm: null
+hw_memory_details_summary:
+  cpu_1:
+    number_of_sockets: 12
+    operating_frequency: 2400 MHz
+    operating_voltage: 1.20 v
+    total_memory_size: 144 GB
+  cpu_2:
+    number_of_sockets: 12
+    operating_frequency: 2400 MHz
+    operating_voltage: 1.20 v
+    total_memory_size: N/A
+hw_memory_total: 144 GB
+hw_product_name: ProLiant DL380 Gen10
+hw_product_uuid: 38443851-4131-4753-4838-3034594C5334
+hw_system_serial: SGH804YLS4
+hw_uuid: Q8D81ASGH804YLS4
+module_hw: true

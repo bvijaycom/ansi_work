@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  tasks: 
+  - hpilo_facts:
+      host:  172.28.1.130
+      login: Administrator
+      password: Admin@123
+    register: results
+  - debug:
+      msg: "{{results}}"
+  - template:
+     src: hpilo1.j2
+     dest: /tmp/hpilo.txt
+#    when: cmdb_hwmodel.startswith('HP ')
+#    delegate_to: localhost
+
+

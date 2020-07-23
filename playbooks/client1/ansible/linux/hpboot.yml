@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  tasks:
+  - hpilo_boot:
+      host: 172.28.1.254
+      login: Administrator
+      password: Admin@123
+      #state: poweroff
+      media: cdrom
+      image: http://localhost/CentOS-7-x86_64-Minimal-1810.iso
+    delegate_to: localhost

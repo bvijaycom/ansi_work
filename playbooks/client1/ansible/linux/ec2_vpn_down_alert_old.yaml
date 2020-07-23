@@ -1,0 +1,15 @@
+---
+- name: "the vpn down status"
+  hosts: localhost
+  roles:
+    - role: ec2_vpn_down_alert
+      delegate_host: localhost
+      email_to: darmesh@skylarkinfo.com,selva@skylarkinfo.com
+      email_cc: navaneethan@skylarkinfo.com,nilober@skylarkinfo.com
+      client_name: Skylark
+      slack_alert: false
+      mail_alert: true
+      smtp_host:  smtp.gmail.com
+      smtp_port: 587
+      smtp_username: navaneethan@skylarkinfo.com
+      region: us-east-1

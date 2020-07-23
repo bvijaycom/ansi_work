@@ -1,0 +1,18 @@
+---
+- name: "EC2 Instance Information"
+  hosts: localhost
+  roles:
+  - role: ec2_instance_info
+    delegate_host: localhost
+    email_to: support@skylarkinfo.com
+    email_cc: selva@skylarkinfo.com,darmesh@skylarkinfo.com,navaneethan@skylarkinfo.com,nilober@skylarkinfo.com
+    #aws_access_key: AKIA6DTHLTSBJZH5LJTZ
+    #aws_secret_key: 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
+    region: us-east-1
+    mail_alert: true
+    slack_alert: false
+    smtp_host: smtp.gmail.com
+    smtp_port: 587
+    smtp_username: monitoring@skylarkinfo.com
+   # smtp_password: tn09bk1329
+    template_storage_path: /home/ansible/test.txt

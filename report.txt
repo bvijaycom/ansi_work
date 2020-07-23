@@ -1,0 +1,990 @@
+category: 110 - Ensure mounting of FAT filesystems is disabled
+Condion       = Success
+state         = install /bin/true 
+
+category: 111 - Ensure mounting of cramfs filesystems is disabled
+Condion       = Success
+state         = install /bin/true 
+
+
+category: 112 - Ensure mounting of freevxfs filesystems is disabled
+Condion       = Success
+state         = install /bin/true 
+
+category: 113 - Ensure mounting of jffs2 filesystems is disabled
+Condion       = Success
+state         = install /bin/true 
+
+category: 114 - Ensure mounting of hfs filesystems is disabled
+Condion       = Success
+state         = install /bin/true 
+
+category: 115 - Ensure mounting of hfsplus filesystems is disabled
+Condion       = Success
+state         = install /bin/true 
+
+category: 116 - Ensure mounting of udf filesystems is disabled
+Condion       = Success
+state         = install /bin/true 
+
+category: 117 - Ensure mounting of squashfs filesystems is disabled
+Condion       = Success
+state         = install /bin/true 
+
+
+category: 118 - Ensure separate partition exists for /tmp
+Condition     = Failed
+state         = /tmp partion not found
+
+category: 119 - Ensure nodev option set on /tmp partition
+Condition     = Failed
+State         = Partition not found
+
+category: 119a - Ensure nodev option set on /tmp partition
+Condition     = Failed
+State         = Partition not found
+
+category: 120 - Ensure nosuid option set on /tmp partition
+Condition     = Failed
+State         = Partition not found
+
+category: 121 - Ensure separate partition exists for /var
+Condition     = Failed
+state         = /var partion not found
+
+category: 122 - Ensure separate partition exists for /var/tmp
+Condition     = Failed
+state         = /var/tmp partion not found
+
+category: 123 - Ensure nodev option set on /var/tmp partition
+Condition     = Failed
+State         = Partition not found
+
+category: 124 - Ensure nosuid option set on /var/tmp partition
+Condition     = Failed
+State         = Partition not found
+
+category: 125 - Ensure noexec option set on /var/tmp partition
+Condition     = Failed
+State         = Partition not found
+
+category: 126 - Ensure separate partition exists for /var/log
+Condition     = Failed
+state         = /var/log partion not found
+
+category: 127 - Ensure separate partition exists for /var/log/audit
+Condition     = Failed
+state         = /var/log/audit partion not found
+
+category: 128 - Ensure separate partition exists for /home
+Condition     = Failed
+state         = /home partion not found
+
+category: 129 - Ensure nodev option set on /home partition
+Condition     = Failed
+State         = Partition not found
+
+category: 130 - Ensure nodev option set on /dev/shm partition
+Condition     = Success
+state         = nodev option already set on /dev/shm partition
+
+category: 131 - Ensure nosuid option set on /dev/shm partition
+Condition     = Success
+state         = nosuid option already set on /dev/shm partition
+
+category: 132 - Ensure noexec option set on /dev/shm partition
+Condition     = Failed
+state         = noexec option not set on /dev/shm partition
+
+category: 133 - Ensure nodev option set on removable media partitions
+Condition     = Success
+State         = Partition not found
+
+category: 134 - Ensure nosuid option set on removable media partitions
+Condition     = Success
+State         = Partition not found
+
+category: 135 - Ensure noexec option set on removable media partitions
+Condition     = Success
+State         = Partition not found
+
+category: 136 - Ensure sticky bit is set on all world-writable directories
+Condition     = Success
+state         = All world-writable directories set sticky bit
+
+category: 137 - Disable Automounting
+Condition     = Success
+State         = Autofs Package not installed/started
+
+category: 141 - Ensure Package manager repositories are configured
+Condion       = Success
+state         = Package manager repositories are configured
+
+category: 142 - Ensure GPG keys are configured
+Condion       = Success
+state         = GPG keys are configured
+
+category: 143 - Ensure gpgcheck is globally activated
+Condion       = Success
+state         = gpgcheck is globally activated
+
+category: 151 - Ensure AIDE is installed
+Condion       = Success
+state         = aide Package is installed
+
+
+category: 152 - Ensure filesystem integrity is regularly checked
+Condion       = Success
+state         = filesystem integrity is regularly checked
+
+category: 161 - Ensure permissions on bootloader config are configured
+Condion       = Failed
+State         = permissions are incorrect
+
+category: 162 - Ensure Bootloader password is set
+Condion       = Failed
+State         = Bootloader password is not set
+
+category: 171 - Ensure core dumps are restricted
+Condion       = Failed
+state         = Hard core limit is not configure
+Condion       = Success
+state         = suid_dumpable is set
+
+category: 173 - Ensure address space layout randomization (ASLR) is enabled
+Condion       = Success
+state         = address space layout randomization (ASLR) is enabled
+
+category: 174 - Ensure prelink is disabled
+Condion       = Success
+state         = prelink is not found
+
+category: 181 - Ensure SELinux is not disabled in bootloader configuration
+Condion       = Success
+state         = SELinux is not disabled in bootloader configuration
+
+category: 182 - Ensure the SELinux state is enforcing
+Condion       = Success
+state         = SELinux state is enforcing
+
+category: 183 - Ensure SELinux policy is configured
+Condion       = Success
+state         = SELinux policy is configured
+
+category: 184 - Ensure SETroubleshoot is not installed
+Condion       = Success
+state         = SETroubleshoot is not installed
+
+category: 185 - Ensure the MCS Translation Service (mcstrans) is not installed
+Condion       = Success
+state         = MCS Translation Service (mcstrans) is not installed
+
+category: 186 - Ensure no unconfined daemons exist
+Condion       = Success
+state         = No unconfined daemons exist
+
+category: 187 - Ensure SELinux is installed
+Condion       = Success
+state         = SELinux is installed
+
+
+
+
+category: 194 - Ensure message of the day is configured properly
+Condion       = Success
+state         = Message of the day is configured properly
+
+category: 195 - local login warning banner is configured properly
+Condion       = Success
+state         = login warning banner is configured properly
+
+category: 196 - Ensure remote login warning banner is configured properly
+Condion       = Success
+state         = Remote login warning banner is configured properly
+
+category: 197 - Ensure permissions on /etc/motd are configured
+Condion       = Success
+State         = permissions are correct
+
+category: 198 - Ensure permissions on /etc/issue are configured
+Condion       = Success
+State         = permissions are correct
+
+category: 199 - Ensure permissions on /etc/issue.net are configured
+Condion       = Success
+State         = permissions are correct
+
+category: 200 - Ensure updates, patches, and additional security software are installed
+Condion       = Success
+state         = All Packages are upto date.
+
+category: 211 - Ensure chargen services are not enabled
+Condition     = Success
+State:        = chargen services are not found.
+
+category: 212 - Ensure daytime services are not enabled
+Condition     = Success
+State:        = daytime services are not found.
+
+category: 213 - Ensure discard services are not enabled
+Condition     = Success
+State:        = discard services are not found.
+
+category: 214 - Ensure echo services are not enabled
+Condition     = Success
+State:        = echo services are not found.
+
+category: 215 - Ensure time services are not enabled
+Condition     = Success
+State:        = time services are not found.
+
+category: 216 - Ensure tftp services are not enabled
+Condition     = Success
+State:        = tftp services are not found.
+
+category: 217 - Ensure xinetd is not enabled
+Condition     = Success
+State:        = xinetd services are not found.
+
+category: 221 - Ensure time synchronization is in use
+Condion       = Success
+State         = Time synchronization is in use
+              - ntpdate-4.2.6p5-29.el7.centos.2.x86_64
+ntp-4.2.6p5-29.el7.centos.2.x86_64 chrony-3.4-1.el7.x86_64
+
+category: 222 - Ensure ntp is configured
+Condion       = Failed
+State         = Some Parameter not configured in ntp.conf
+Condion       = Failed
+State         = Some Parameter (user) not configured in ntp.conf
+Condion       = Failed
+State         = Some parameter (user) not configure in ntp.conf
+
+category: 223 - Ensure chrony is configured
+Condion       = Success
+State         = All parameter(user) configure in chrony.conf
+
+category: 224 - Ensure X Window System is not installed
+Condion       = Success
+State         = X Window System is not installed
+
+category: 225 - Ensure Avahi Server is not enabled
+Condition     = Success
+State:        = Avahi deamon services are not found.
+
+category: 226 - Ensure CUPS is not enabled
+Condition     = Success
+State:        = Cups deamon services are not found.
+
+category: 227 - Ensure DHCP Server is not enabled
+Condition     = Success
+State:        = DHCP deamon services are not found.
+
+category: 228 - Ensure LDAP server is not enabled
+Condition     = Success
+State:        = LDAP deamon services are not found.
+
+category: 229 - Ensure nfs Server is not enabled
+Condition     = Success
+State:        = Nfs deamon services are not found.
+
+
+category: 230 - Ensure DNS Server is not enabled
+Condition     = Success
+State:        = DNS deamon services are not found.
+
+category: 231 - Ensure FTP Server is not enabled
+Condion       = Success
+State         = FTP services are not enabled
+
+category: 232 - Ensure HTTPd Server is not enabled
+Condion       = Success
+State         = HTTPd services are not enabled
+
+category: 233 - Ensure IMAP and POP3 server is not enabled
+Condition     = Success
+State:        = Devecot deamon services are not found.
+
+category: 234 - Ensure samba Server is not enabled
+Condition     = Success
+State:        = Smb deamon services are not found.
+
+category: 235 - Ensure  HTTP Proxy Server is not enabled
+Condition     = Success
+State:        = HTTP Proxy deamon services are not found.
+
+category: 236 - Ensure SNMP Server is not enabled
+Condition     = Success
+State:        = SNMP deamon services are not found.
+
+category: 237 - Ensure mail transfer agent is configured for local-only mode
+Condion       = Failed
+State         = Mail transfer agent is not configured for local-only mode
+
+category: 238 - Ensure NIS Server is not enabled
+Condition     = Success
+State:        = NIS deamon services are not found.
+
+category: 239 - Ensure rsh server is not enabled
+Condition     = Success
+State:        = rsh deamon services are not found.
+
+category: 240 - Ensure telnet Server is not enabled
+Condition     = Success
+State:        = telnet deamon services are not found.
+
+category: 241 - Ensure tftp server is not enabled
+Condition     = Success
+State:        = tftp deamon services are not found.
+
+category: 242 - Ensure rsync service is not enabled
+Condion       = Success
+State         = Rsync services are not enabled
+
+category: 243 - Ensure talk Server is not enabled
+Condition     = Success
+State:        = talk deamon services are not found.
+
+category: 251 - Ensure NIS Client is not installed
+Condion       = Success
+State         = Package NIS Client is not installed
+
+category: 252 - Ensure rsh client is not installed
+Condion       = Success
+State         = Package rsh client is not installed
+
+category: 253 - Ensure talk client is not installed
+Condion       = Success
+State         = Package talk client is not installed
+
+category: 254 - Ensure telnet client is not installed
+Condion       = Success
+State         = Package telnet client is not installed
+
+category: 255 - Ensure LDAP client is not installed
+Condion       = Success
+State         = Package openldap-clients is not installed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+category: 311 - Ensure IP forwarding is disabled
+Condion       = Success
+state         = net.ipv4.ip_forward = 0
+
+category: 312 - Ensure packet redirect sending is disabled
+Condion       = Success
+state         = net.ipv4.conf.all.send_redirects = 0
+Condion       = Success
+state         = net.ipv4.conf.default.send_redirects = 0
+
+
+category: 313 - Ensure source routed packets are not accepted
+Condion       = Success
+state         = net.ipv4.conf.all.accept_source_route = 0
+Condion       = Success
+state         = net.ipv4.conf.default.accept_source_route = 0
+
+category: 314 - Ensure ICMP redirects are not accepted
+Condion       = Success
+state         = net.ipv4.conf.all.accept_redirects = 0
+Condion       = Success
+state         = net.ipv4.conf.default.accept_redirects = 0
+
+category: 315 - Ensure secure ICMP redirects are not accepted
+Condion       = Success
+state         = net.ipv4.conf.all.secure_redirects = 0
+Condion       = Success
+state         = net.ipv4.conf.default.secure_redirects = 0
+
+category: 316 - Ensure suspicious packets are logged
+Condion       = Success
+state         = net.ipv4.conf.all.log_martians = 1
+Condion       = Success
+state         = net.ipv4.conf.default.log_martians = 1
+
+category: 317 - Ensure broadcast ICMP requests are ignored
+Condion       = Success
+state         = net.ipv4.icmp_echo_ignore_broadcasts = 1
+
+category: 318 - Ensure bogus ICMP responses are ignored
+Condion       = Success
+state         = net.ipv4.icmp_ignore_bogus_error_responses = 1
+
+category: 319 - Ensure Reverse Path Filtering is enabled
+Condion       = Success
+state         = net.ipv4.conf.all.rp_filter = 1
+Condion       = Success
+state         = net.ipv4.conf.default.rp_filter = 1
+
+category: 320 - Ensure TCP SYN Cookies is enabled
+Condion       = Success
+state         = net.ipv4.tcp_syncookies = 1
+
+
+category: 331 - Ensure IPv6 router advertisements are not accepted
+Condion       = Success
+state         = net.ipv6.conf.all.accept_ra = 0
+Condion       = Success
+state         = net.ipv6.conf.default.accept_ra = 0
+
+category: 332 - Ensure IPv6 redirects are not accepted
+Condion       = Success
+state         = net.ipv6.conf.all.accept_redirects = 0
+Condion       = Success
+state         = net.ipv6.conf.default.accept_redirects = 0
+
+category: 333 - Ensure IPv6 is disabled
+Condion       = Failed
+state         = Parameter is match
+
+
+category: 341 - Ensure TCP Wrappers is installed
+Condion       = Success
+state         = tcp_wrappers-7.6-77.el7.x86_64
+
+
+category: 342 - Ensure /etc/hosts.allow is configured
+Condion       = Success
+state         = ALL: 10.0.0.0/255.0.0.0, 172.16.0.0/255.240.0.0, 192.168.0.0/255.255.0.0
+
+category: 343 - Ensure /etc/hosts.deny is configured
+Condion       = Success
+state         = ALL: ALL
+
+category: 344 - Ensure permissions on /etc/hosts.allow are configured
+Condion       = Success
+State         = permissions are correct
+
+category: 345 - Ensure permissions on /etc/hosts.deny are configured
+Condion       = Success
+State         = permissions are correct
+
+category: 351 - Ensure DCCP is disabled
+Condion       = Success
+state         = install /bin/true 
+
+category: 352 - Ensure sctp is disabled
+Condion       = Success
+state         = install /bin/true 
+
+category: 353 - Ensure rds is disabled
+Condion       = Success
+state         = install /bin/true 
+
+category: 354 - Ensure TIPC is disabled
+Condion       = Success
+state         = install /bin/true 
+
+category: 361 - Ensure Iptables is installed
+Condion       = Success
+state         = iptables-1.4.21-34.el7.x86_64
+
+category: 362 - Ensure firewalld is installed
+Condion       = Success
+state         = firewalld-filesystem-0.6.3-8.el7_8.1.noarch
+firewalld-0.6.3-8.el7_8.1.noarch
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+category: 411 - Ensure audit log storage size is configured
+Condion       = Failed
+state         = Parameter is match
+
+category: 412 - Ensure audit log storage size is configured
+space_left_action status
+Condion       = Success
+state         = space_left_action = email
+action_mail_acct status
+Condion       = Success
+state         = action_mail_acct = root
+admin_space_left_action status
+Condion       = Success
+state         = admin_space_left_action = halt
+
+category: 413 - Ensure audit logs are not automatically deleted
+Condion       = Success
+state         = max_log_file_action = keep_logs
+
+category: 414 - Ensure auditd daemon is enabled
+Condion       = Success
+state         = auditd status enabled
+
+category: 415 - Ensure auditing for processes that start prior to auditd is enabled
+Condion       = Success
+state         = auditd status 	linuxefi /boot/vmlinuz-3.10.0-1127.13.1.el7.x86_64 root=UUID=f1422908-9fb5-4388-b583-103d15ab7604 ro crashkernel=auto console=ttyS0,38400n8 audit=1 
+	linuxefi /boot/vmlinuz-3.10.0-1062.el7.x86_64 root=UUID=f1422908-9fb5-4388-b583-103d15ab7604 ro crashkernel=auto console=ttyS0,38400n8 audit=1 
+	linuxefi /boot/vmlinuz-0-rescue-c0080aa9b80d185086279e4468171a46 root=UUID=f1422908-9fb5-4388-b583-103d15ab7604 ro crashkernel=auto console=ttyS0,38400n8 audit=1 
+
+category: 416 - Ensure events that modify date and time information are collected
+Condion       = Success
+state         = -a always,exit -F arch=b64 -S adjtimex -S settimeofday -k time-change
+-a always,exit -F arch=b32 -S adjtimex -S settimeofday -S stime -k time-change
+-a always,exit -F arch=b64 -S clock_settime -k time-change
+-a always,exit -F arch=b32 -S clock_settime -k time-change
+-w /etc/localtime -p wa -k time-change
+
+category: 417 - Ensure events that modify user/group information are collected
+Condion       = Success
+state         = -w /etc/group -p wa -k identity
+-w /etc/passwd -p wa -k identity
+-w /etc/gshadow -p wa -k identity
+-w /etc/shadow -p wa -k identity
+-w /etc/security/opasswd -p wa -k identity
+
+category: 418 - Ensure events that modify the system's network environment are collected
+Condion       = Success
+state         = -a always,exit -F arch=b64 -S sethostname -S setdomainname -k system-locale
+-a always,exit -F arch=b32 -S sethostname -S setdomainname -k system-locale
+-w /etc/issue -p wa -k system-locale
+-w /etc/issue.net -p wa -k system-locale
+-w /etc/hosts -p wa -k system-locale
+-w /etc/sysconfig/network -p wa -k system-locale
+
+category: 419 - Ensure events that modify the system's Mandatory Access Controls are collected
+Condion       = Success
+state         = -w /etc/selinux/ -p wa -k MAC-policy
+-w /usr/share/selinux/ -p wa -k MAC-policy
+
+category: 420 - Ensure session initiation information is collected
+Condion       = Success
+state         = -w /var/run/utmp -p wa -k session
+-w /var/log/wtmp -p wa -k session
+-w /var/log/btmp -p wa -k session
+
+category: 421 - Ensure discretionary access control permission modification events are collected
+Condion       = Success
+state         = -a always,exit -F arch=b64 -S chmod -S fchmod -S fchmodat -F auid>=1000 -F auid!=4294967295 -k perm_mod
+-a always,exit -F arch=b32 -S chmod -S fchmod -S fchmodat -F auid>=1000 -F auid!=4294967295 -k perm_mod
+-a always,exit -F arch=b64 -S chown -S fchown -S fchownat -S lchown -F auid>=1000 -F auid!=4294967295 -k perm_mod
+-a always,exit -F arch=b32 -S chown -S fchown -S fchownat -S lchown -F auid>=1000 -F auid!=4294967295 -k perm_mod
+-a always,exit -F arch=b64 -S setxattr -S lsetxattr -S fsetxattr -S removexattr -S lremovexattr -S fremovexattr -F auid>=1000 -F auid!=4294967295 -k perm_mod
+-a always,exit -F arch=b32 -S setxattr -S lsetxattr -S fsetxattr -S removexattr -S lremovexattr -S fremovexattr -F auid>=1000 -F auid!=4294967295 -k perm_mod
+
+category: 422 - Ensure events that modify the system's Mandatory Access Controls are collected
+Condion       = Success
+state         = -a always,exit -F arch=b64 -S creat -S open -S openat -S truncate -S ftruncate -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k access
+-a always,exit -F arch=b32 -S creat -S open -S openat -S truncate -S ftruncate -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k access
+-a always,exit -F arch=b64 -S creat -S open -S openat -S truncate -S ftruncate -F exit=-EPERM -F auid>=1000 -F auid!=4294967295 -k access
+-a always,exit -F arch=b32 -S creat -S open -S openat -S truncate -S ftruncate -F exit=-EPERM -F auid>=1000 -F auid!=4294967295 -k access
+
+category: 424 - Ensure successful file system mounts are collected
+Condion       = Success
+state         = -a always,exit -F arch=b64 -S mount -F auid>=1000 -F auid!=4294967295 -k mounts
+-a always,exit -F arch=b32 -S mount -F auid>=1000 -F auid!=4294967295 -k mounts
+
+category: 425 - Ensure file deletion events by users are collected
+Condion       = Success
+state         = -a always,exit -F arch=b64 -S unlink -S unlinkat -S rename -S renameat -F auid>=1000 -F auid!=4294967295 -k delete
+-a always,exit -F arch=b32 -S unlink -S unlinkat -S rename -S renameat -F auid>=1000 -F auid!=4294967295 -k delete
+-a always,exit arch=b64 -S init_module -S delete_module -k modules
+
+category: 426 - Ensure changes to system administration scope (sudoers) is collected
+Condion       = Success
+state         = -w /etc/sudoers -p wa -k scope
+-w /etc/sudoers.d -p wa -k scope
+
+category: 427 - Ensure system administrator actions (sudolog) are collected
+Condion       = Success
+state         = -w /var/log/sudo.log -p wa -k actions
+
+category: 428 - Ensure system administrator actions (sudolog) are collected
+Condion       = Success
+state         = -w /sbin/insmod -p x -k modules
+-w /sbin/rmmod -p x -k modules
+-w /sbin/modprobe -p x -k modules
+-a always,exit arch=b64 -S init_module -S delete_module -k modules
+
+category: 429 - Ensure the audit configuration is immutable
+Condion       = Success
+state         = -e 2
+
+category: 430 - Ensure login and logout events are collected
+Condion       = Success
+state         = -w /var/log/lastlog -p wa -k logins
+-w /var/run/faillock/ -p wa -k logins
+-w /var/log/faillog -p wa -k logins
+-w /var/log/tallylog -p wa -k logins
+
+category: 431 - Ensure rsyslog daemon is enabled
+Condion       = Success
+state         = rsyslog status enabled
+
+category: 433 - Ensure rsyslog default file permissions configured
+Condion       = Success
+state         = /etc/rsyslog.conf:$FileCreateMode 0640
+
+category: 434 - Ensure rsyslog is configured to send logs to a remote log host
+Condition     = Failed
+state         = Parameter is not configure
+
+category: 435 - Ensure remote rsyslog messages are only accepted on designated log hosts
+ModLoad imtcp Parameter:
+Condion       = Failed
+state         = Parameter is not configure
+InputTCPServerRun Parameter:
+Condion       = Failed
+state         = Parameter is not configure
+
+category: 511 - Ensure cron daemon is enabled
+Condion       = Success
+state         = cron status enabled
+
+category: 512 - Ensure permissions on /etc/crontab are configured
+Condion       = Success
+State         = permissions are correct
+
+category: 513 - Ensure permissions on /etc/cron.hourly are configured
+Condion       = Success
+State         = permissions are correct
+
+category: 514 - Ensure permissions on /etc/cron.daily are configured
+Condion       = Success
+State         = permissions are correct
+
+category: 515 - Ensure permissions on /etc/cron.weekly are configured
+Condion       = Success
+State         = permissions are correct
+
+category: 516 - Ensure permissions on /etc/cron.monthly are configured
+Condion       = Success
+State         = permissions are correct
+
+category: 517 - Ensure permissions on /etc/cron.d are configured
+Condion       = Success
+State         = permissions are correct
+
+category: 518 - Ensure permissions on /etc/at.allow are configured
+Condion       = Success
+State         = permissions are correct
+
+category: 519 - Ensure permissions on /etc/cron.allow are configured
+Condion       = Success
+State         = permissions are correct
+
+category: 520 - Ensure permissions on /etc/at.deny are configured
+Condion       = Success
+State         = /etc/at.deny file was not found
+
+category: 521 - Ensure permissions on /etc/cron.deny are configured
+Condion       = Success
+State         = /etc/cron.deny file was not found
+
+category: 531 - Ensure permissions on /etc/ssh/sshd_config are configured
+Condion       = Success
+State         = permissions are correct
+
+category: 532 - Ensure SSH Protocol is set to 2
+Condion       = Success
+State         = Protocol 2
+
+category: 533 - Ensure SSH LogLevel is set to INFO
+Condion       = Success
+State         = LogLevel INFO
+
+category: 534 - Ensure SSH X11 forwarding is disabled
+Condion       = Success
+State         = X11Forwarding no
+
+
+category: 535 - Ensure SSH MaxAuthTries is set to 4 or less
+Condion       = Success
+State         = MaxAuthTries 3
+
+category: 536 - Ensure SSH IgnoreRhosts is enabled
+Condion       = Success
+State         = IgnoreRhosts yes
+
+category: 537 - Ensure SSH HostbasedAuthentication is disabled
+Condion       = Success
+State         = HostbasedAuthentication no
+
+category: 538 - Ensure SSH root login is disabled
+Condion       = Success
+State         = PermitRootLogin no
+
+category: 539 - Ensure SSH PermitEmptyPasswords is disabled
+Condion       = Success
+State         = PermitEmptyPasswords no
+
+category: 540 - Ensure SSH PermitUserEnvironment is disabled
+Condion       = Success
+State         = PermitUserEnvironment no
+
+category: 541 - Ensure only approved ciphers are used
+Condion       = Failed
+State         = cipher Parameter not configure in /etc/ssh/sshd_config
+
+category: 542 - Ensure only approved MAC algorithms are used
+Condion       = Success
+State         = MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256,umac-128@openssh.com
+
+category: 543 - Ensure SSH Idle Timeout Interval - ClientAliveInterval is configured
+Condion       = Success
+State         = ClientAliveInterval 300
+
+category: 544 - Ensure SSH Idle Timeout Interval - ClientAliveCountMax is configured
+Condion       = Success
+State         = ClientAliveCountMax 0
+
+category: 545 - Ensure SSH LoginGraceTime is set to one minute or less
+Condion       = Success
+State         = LoginGraceTime 0
+
+category: 546 - Ensure SSH access - AllowUsers is limited
+Condion       = Failed
+State         = AllowUsers Parameter not configure in /etc/ssh/sshd_config
+
+category: 547 - Ensure SSH access - AllowGroups is limited
+Condion       = Failed
+State         = AllowGroups Parameter not configure in /etc/ssh/sshd_config
+
+category: 548 - Ensure SSH access - DenyUsers is limited
+Condion       = Failed
+State         = DenyUsers Parameter not configure in /etc/ssh/sshd_config
+
+category: 549 - Ensure SSH access - DenyGroups is limited
+Condion       = Failed
+State         = DenyGroups Parameter not configure in /etc/ssh/sshd_config
+
+category: 550 - Ensure SSH access - Banner is limited
+Condion       = Failed
+State         = Banner value is MisMatch
+
+category: 571 - Ensure password expiration is 90 days or less
+Condion       = Success
+State         = PASS_MAX_DAYS 90
+
+category: 571a- Ensure password expiration is 90 days or less - user's list
+Condion       = Failed
+State         = Password expiration days value is MisMatch
+              1 - ansible
+
+category: 572 - Ensure minimum days between password changes is 7 or more
+Condion       = Failed
+State         = value is MisMatch
+
+category: 572a- Ensure minimum days between password changes is 7 or more - user's list
+Condion       = Failed
+State         = minimum days between password changes value is MisMatch
+              1 - ansible
+
+category: 573 - Ensure password expiration warning days is 7 or more
+Condion       = Success
+State         = PASS_WARN_AGE	7
+
+category: 573a- Ensure password expiration warning days is 7 or more - user's list
+Condion       = Success
+State         = All user's password expiration warning days is 7
+
+category: 574 - Ensure inactive password lock is 30 days or less
+Condion       = Success
+State         = INACTIVE=-1
+
+category: 575 - Ensure all users last password change date is in the past
+Condion       = Query
+              1 - ansible              - Last Password Change -  Jul 23, 2020
+
+category: 576 - Ensure system accounts are non-login
+Condion       = Success
+State         = system user are non-login not found
+
+
+category: 578 - Ensure default user umask is 027 or more restrictive
+Condion       = Failed
+State         = Ensure default user umask is (027) not found.
+
+category: 579 - Ensure default user shell timeout is 900 seconds or less
+Condion       = Failed
+State         = Default user shell timeout is not configure
+
+category: 601 - Ensure permissions on /etc/passwd are configured
+Condion       = Success
+State         = permissions are correct
+
+category: 602 - Ensure permissions on /etc/shadow are configured
+Condion       = Success
+State         = permissions are correct
+
+category: 603 - Ensure permissions on /etc/group are configured
+Condion       = Success
+State         = permissions are correct
+
+category: 604 - Ensure permissions on /etc/gshadow are configured
+Condion       = Success
+State         = permissions are correct
+
+category: 605 - Ensure permissions on /etc/passwd- are configured
+Condion       = Success
+State         = permissions are correct
+
+category: 606 - Ensure permissions on /etc/shadow- are configured
+Condion       = Success
+State         = permissions are correct
+
+category: 607 - Ensure permissions on /etc/group- are configured
+Condion       = Success
+State         = permissions are correct
+
+category: 608 - Ensure permissions on /etc/gshadow- are configured
+Condion       = Success
+State         = permissions are correct
+
+category: 609 - Ensure no world writable files exist
+Condion       = Success
+State         = no world writable files exist
+
+category: 610 - Ensure no unowned files or directories exist
+Condion       = Success
+State         = no unowned files or directories exist
+
+category: 611 - Ensure no ungrouped files or directories exist
+Condion       = Success
+State         = no ungrouped files or directories exist
+
+category: 612 - Audit SUID executables
+Condion       = Failed
+State         = SUID executables files found
+              1 - /usr/bin/chage
+              2 - /usr/bin/gpasswd
+              3 - /usr/bin/newgrp
+              4 - /usr/bin/su
+              5 - /usr/bin/chfn
+              6 - /usr/bin/chsh
+              7 - /usr/bin/sudo
+              8 - /usr/bin/mount
+              9 - /usr/bin/pkexec
+              10 - /usr/bin/umount
+              11 - /usr/bin/crontab
+              12 - /usr/bin/passwd
+              13 - /usr/sbin/pam_timestamp_check
+              14 - /usr/sbin/unix_chkpwd
+              15 - /usr/sbin/usernetctl
+              16 - /usr/lib/polkit-1/polkit-agent-helper-1
+              17 - /usr/libexec/dbus-1/dbus-daemon-launch-helper
+
+category: 613 - Audit SGID executables
+Condion       = Failed
+State         = SGID executables files found
+              1 - /usr/bin/wall
+              2 - /usr/bin/write
+              3 - /usr/bin/ssh-agent
+              4 - /usr/sbin/netreport
+              5 - /usr/sbin/postdrop
+              6 - /usr/sbin/postqueue
+              7 - /usr/libexec/utempter/utempter
+              8 - /usr/libexec/openssh/ssh-keysign
+
+category: 621 - Ensure password fields are not empty
+Condion       = Success
+State         = users password fields are not empty
+
+category: 622 - Ensure no legacy "+" entries exist in /etc/passwd
+Condion       = Success
+State         = no legacy "+" entries exist in /etc/passwd
+
+category: 623 - Ensure no legacy "+" entries exist in /etc/shadow
+Condion       = Success
+State         = no legacy "+" entries exist in /etc/shadow
+
+category: 624 - Ensure no legacy "+" entries exist in /etc/group
+Condion       = Success
+State         = no legacy "+" entries exist in /etc/group
+
+category: 625 - Ensure root is the only UID 0 account
+Condion       = Success
+State         = root is the only UID 0 account
+
+category: 626 - Ensure root PATH Integrity
+Condion       = Success
+State         = Ensure root PATH Integrity is fine
+
+category: 627 - Ensure all users' home directories exist
+Condion       = Success
+State         = All users' home directories exist
+
+
+category: 629 - Ensure users own their home directories
+Condion       = Success
+State         = All users own their home directories
+
+category: 630 - Ensure users own their home directories
+Condion       = Success
+State         = Ensure users dot files are not group or world writable
+
+category: 631 - Ensure no users have .forward files
+Condion       = Success
+State         = no users have .forward file
+
+category: 632 - Ensure no users have .netrc files
+Condion       = Success
+State         = no users have .netrc file
+
+category: 633 - Ensure users' .netrc Files are not group or world accessible
+Condion       = Success
+State         = no users .netrc Files are not group or world accessible
+
+category: 634 - Ensure no users have .rhosts files
+Condion       = Success
+State         = no users have .rhosts files
+
+category: 635 - Ensure all groups in /etc/passwd exist in /etc/group
+Condion       = Success
+State         = All groups in /etc/passwd exist in /etc/group
+
+category: 636 - Ensure no duplicate UIDs exist
+Condion       = Success
+State         = No duplicate UIDs found
+
+category: 637 - Ensure no duplicate GIDs exist
+Condion       = Success
+State         = No duplicate GIDs found
+
+category: 638 - Ensure no duplicate user names exist
+Condion       = Success
+State         = No duplicate user name's found
+
+category: 639 - Ensure no duplicate group names exist
+Condion       = Success
+State         = No duplicate group name's found

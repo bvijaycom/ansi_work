@@ -1,0 +1,41 @@
+---
+- name: "check weather domain name works or not"
+  uri:
+    url: "{{item}}"
+  loop: "{{url_list}}"
+  register: result
+  no_log: true
+  ignore_errors: true
+
+- debug:
+    msg: >
+      {% for i in result.results | json_query('[]') %}
+      {% if i.status != 200 %}
+      status: {{i.item}} - down
+      {% endif %}
+      {% endfor %}
+  register: url_result
+  no_log: true
+  ignore_errors: true
+
+- name: "Mail ec2 vpn information"
+  mail:
+    host: "{{smtp_host}}"
+    port: "{{smtp_port}}" # 587
+    username: "{{smtp_username}}"
+    password: "{{smtp_password}}"
+    to: "{{email_to}}"
+    cc: "{{email_cc}}"
+    from: "ansible@{{ansible_nodename}}"
+    subject: "{{ client_name }} website DOWN Report"
+    body: "{{url_result.msg}}"
+  delegate_to: "{{ delegate_host | default('localhost') }}"
+  run_once: True
+  when: mail_alert == true and url_result.msg.find('down') != -1
+
+- name: "Send notification message via Slack"
+  slack:
+    token: "{{slack_token}}"
+    channel: "{{ansible_slack_channel}}"
+    msg: "{{ client_name }} - {{url_result.msg}}"
+  when: slack_alert == true and url_result.msg.find('down') != -1

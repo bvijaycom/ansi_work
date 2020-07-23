@@ -1,0 +1,96 @@
+instance_id               : i-0b58e5acc01651e05
+tags name                 : SKYCRM-TESTING
+image_id                  : ami-02eac2c0129f6376b
+instance_type             : t2.micro
+key_name                  : iarm-security
+launch_time               : 2019-03-28T05:03:12+00:00
+availability_zone         : us-east-1a
+private_dns_name          : ip-10-0-0-174.ec2.internal
+private_ip_address        : 10.0.0.174
+tenancy                   : default
+subnet_id                 : subnet-0e35032368cd90983
+vpc_id                    : vpc-0b4e487905014f24e
+monitoring                : disabled
+public_dns_name           : None
+public_ip_address         : None
+state                     : running
+security_group_id         : sg-040b3e6be99f260c7
+security_group_name       : GI-Security-group
+
+device_name:
+------------
+1 - /dev/sda1
+status : attached
+delete_on_termination : False
+attach_time : 2019-03-27T15:15:44+00:00
+volume_id : vol-0e7e757c444950405
+status : attached
+delete_on_termination : False
+attach_time : 2019-03-27T15:15:44+00:00
+volume_id : vol-0e7e757c444950405
+
+
+instance_id               : i-0d2c634aa0e8cc427
+tags name                 : Strides-Itop
+image_id                  : ami-80861296
+instance_type             : t2.medium
+key_name                  : stridesshasun.com
+launch_time               : 2019-03-26T10:26:50+00:00
+availability_zone         : us-east-1c
+private_dns_name          : ip-172-31-78-179.ec2.internal
+private_ip_address        : 172.31.78.179
+tenancy                   : default
+subnet_id                 : subnet-3ca9b511
+vpc_id                    : vpc-d62d13b0
+monitoring                : enabled
+public_dns_name           : None
+public_ip_address         : None
+state                     : stopped
+security_group_id         : sg-b3123fcd
+security_group_name       : launch-wizard-2
+
+device_name:
+------------
+1 - /dev/sda1
+status : attached
+delete_on_termination : True
+attach_time : 2017-05-27T09:00:30+00:00
+volume_id : vol-05a0812e0d4f0fa3a
+status : attached
+delete_on_termination : True
+attach_time : 2017-05-27T09:00:30+00:00
+volume_id : vol-05a0812e0d4f0fa3a
+
+
+instance_id               : i-05f5b54dbc1a4dd87
+tags name                 : IARMINFO
+image_id                  : ami-49c9295f
+instance_type             : t2.medium
+key_name                  : iarm-security
+launch_time               : 2017-04-12T13:01:43+00:00
+availability_zone         : us-east-1c
+private_dns_name          : ip-172-31-78-169.ec2.internal
+private_ip_address        : 172.31.78.169
+tenancy                   : default
+subnet_id                 : subnet-3ca9b511
+vpc_id                    : vpc-d62d13b0
+monitoring                : enabled
+public_dns_name           : None
+public_ip_address         : None
+state                     : stopped
+security_group_id         : sg-e3027c9c
+security_group_name       : launch-wizard-1
+
+device_name:
+------------
+1 - /dev/sda1
+status : attached
+delete_on_termination : True
+attach_time : 2017-04-08T06:46:40+00:00
+volume_id : vol-0f6e1884c48fbc757
+status : attached
+delete_on_termination : True
+attach_time : 2017-04-08T06:46:40+00:00
+volume_id : vol-0f6e1884c48fbc757
+
+

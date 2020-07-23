@@ -1,0 +1,63 @@
+HPE iLO Report:
+==============
+hw_bios_date                                       : {{results.ansible_facts.hw_bios_date}}
+hw_bios_version                                    : {{results.ansible_facts.hw_bios_version}}
+hw_memory_total                                    : {{results.ansible_facts.hw_memory_total}}
+hw_product_name                                    : {{results.ansible_facts.hw_product_name}}
+hw_product_uuid                                    : {{results.ansible_facts.hw_product_uuid}}
+hw_system_serial                                   : {{results.ansible_facts.hw_system_serial}}
+hw_uuid                                            : {{results.ansible_facts.hw_uuid}}
+
+firmware information:
+----------------------
+{% for i, k in results.ansible_facts.hw_health.firmware_information.iteritems()%}
+{{i.ljust(50)}} - {{k}} 
+{% endfor %}
+
+hw_memory_details_summary:
+---------------------------
+{% for a,b in results.ansible_facts.hw_memory_details_summary.items() %}
+{{a}}
+{% for i,m in b.items() %}
+{{i.ljust(50)}} : {{m}}
+{% endfor %}
+{% endfor %}
+
+health_at_a_glance
+------------------
+{% for a,b in results.ansible_facts.hw_health.health_at_a_glance.items() %}
+{{a}}
+{% for i,m in b.items() %}
+{{i.ljust(50)}} : {{m}}
+{% endfor %}
+
+{% endfor %}
+
+power_supplies
+--------------
+{% for a,b in results.ansible_facts.hw_health.power_supplies.items() %}
+{{a}}
+{% for i,m in b.items() %}
+{{i.ljust(50)}} : {{m}}
+{% endfor %}
+
+{% endfor %}
+
+processors
+----------
+{% for a,b in results.ansible_facts.hw_health.processors.items() %}
+{{a}}
+{% for i,m in b.items() %}
+{{i.ljust(50)}} : {{m}}
+{% endfor %}
+{% endfor %}
+
+
+{% for b in results.ansible_facts.hw_health.storage %}
+{% for i,j in results.ansible_facts.hw_health.storage['Controller in Slot 3'].logical_drives[0].items() %}
+{% if i == 'physical_drives' %}
+{% else %}
+{{i.ljust(50)}} : {{j}}
+{% endif %}
+{% endfor %}
+{% endfor %}

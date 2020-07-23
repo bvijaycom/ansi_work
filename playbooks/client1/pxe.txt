@@ -1,0 +1,226 @@
+pxe-Server IP       : 192.168.1.2
+pxe-Server Gateway  : 192.168.1.1
+pxe-Server Netmask  : 255.255.255.0
+pxe-Server hostname : pxe-server
+
+Pre-requisites
+
+ # yum install dhcp tftp-server syslinux httpd vsftpd -y
+
+
+Install the required packages using yum
+
+# setenforce 0 (permissive)
+# systemctl stop firewalld
+
+
+# yum -y install dhcp tftp-server syslinux httpd xinetd
+
+Let us create separate directory to save all the installation files
+
+# mkdir -p /var/lib/tftpboot/images/centos/7
+
+# mount centos7.iso /opt
+
+# cp -r /opt/* /var/lib/tftpboot/images/centos/7/ 
+
+Please make sure two dot files.
+
+# chmod -R 755 /var/lib/tftpboot/images/centos
+
+# umount /opt
+
+Edit httpd global document
+
+ vi /etc/httpd/conf/httpd.conf
+
+    DocumentRoot "/var/www/html" ---> DocumentRoot "/var/lib/tftpboot/images/"
+    <Directory "/var/www/html">  ---> <Directory "/var/lib/tftpboot/images/">
+
+save and restart the service
+
+# systemctl restart httpd
+
+Now check with browser. able to access or not
+
+Configure TFTP server:
+
+Once these packages are installed copy the below files from the specified directory to /var/lib/tftpboot
+
+# cp /usr/share/syslinux/pxelinux.0     /var/lib/tftpboot/
+# cp /usr/share/syslinux/chain.c32     /var/lib/tftpboot/
+# cp /usr/share/syslinux/menu.c32     /var/lib/tftpboot/
+# cp /usr/share/syslinux/memdisk     /var/lib/tftpboot/
+# cp /usr/share/syslinux/mboot.c32     /var/lib/tftpboot/
+
+
+Next we will create the configuration file required for tftp server
+
+# mkdir /var/lib/tftpboot/pxelinux.cfg
+
+Create a new file "default" under "/var/lib/tftpboot/pxelinux.cfg" and add the
+below entry
+
+For HTTP server
+# vi /var/lib/tftpboot/pxelinux.cfg/default
+
+DEFAULT menu.c32
+PROMPT 0
+TIMEOUT 100
+ONTIMEOUT Local
+
+MENU TITLE PXE Menu
+
+MENU seperator
+LABEL CentOS 7
+KERNEL images/centos/7/images/pxeboot/vmlinuz
+APPEND initrd=images/centos/7/images/pxeboot/initrd.img method=http://192.168.1.2/centos/7 devfs=nomount
+
+LABEL CentOS 7 with Localrepo with kickstart
+KERNEL images/centos/7/images/pxeboot/vmlinuz
+APPEND initrd=images/centos/7/images/pxeboot/initrd.img method=http://192.168.10.171/centos/7  ks=http://192.168.10.171/kick/ks.cfg
+
+
+MENU seperator
+LABEL Local
+LOCALBOOT 0
+
+Enable the tftp service in xinetd
+# vi /etc/xinetd.d/tftp
+service tftp
+{
+        socket_type             = dgram
+        protocol                = udp
+        wait                    = yes
+        user                    = root
+        server                  = /usr/sbin/in.tftpd
+        server_args             = -s /var/lib/tftpboot
+       disable                 = yes -----------------------------> change to no
+        per_source              = 11
+        cps                     = 100 2
+        flags                   = IPv4
+}
+
+
+
+ Restart the relevant services
+
+# systemctl restart xinetd
+# systemctl restart tftp
+
+Configure DHCP server:
+
+vim /etc/dhcp/dhcpd.conf
+
+ddns-update-style interim;
+ignore client-updates;
+authoritative;
+allow booting;
+allow bootp;
+allow unknown-clients;
+
+subnet 192.168.1.0
+netmask 255.255.255.0
+{
+range 192.168.1.10 192.168.1.70;
+option domain-name-servers 192.168.1.2;
+option domain-name "pxe-server";
+option routers 192.168.1.2;
+option broadcast-address 192.168.47.255;
+default-lease-time 600;
+max-lease-time 7200;
+
+        next-server 192.168.1.2;
+        filename "pxelinux.0";
+}
+
+
+Restart the dhcpd services
+
+# systemctl restart dhcpd
+
+restart all services
+
+# systemctl restart dhcpd
+# systemctl resatrt httpd
+# systemctl restart xinetd
+# systemctl restart tftp
+
+
+
+echo "PUT YOUR MAIL BODY HERE" | mailx -s "SUBJECT" -S smtp=smtp://smtp.gmail.com:587 -S smtp-auth=login -S smtp-auth-user=jinojoe@gmail.com -S smtp-auth-password=KULANDAI.29 -S from="JINO <jinojoe@mail.com>"linuxadmin@radiantcashservices.com
+
+
+
+mailx -v -r "monitoring@skylarkinfo.com" -s "subject" -S smtp="smtp.gmail.com:587" -S smtp-use-starttls -S smtp-auth=login -S smtp-auth-user="monitoring@skylarkinfo.com" -S smtp-auth-password="9600127372" -S ssl-verify=ignore jinojoe@gmail.com
+
+
+
+
+
+echo "PUT YOUR MAIL BODY HERE" | mailx -s "SUBJECT" -S smtp=smtp://yoursmtpserver.com -S smtp-auth=login -S smtp-auth-user=YOUR_USERNAME -S smtp-auth-password=YOUR_PASSWORD -S from="Sender Name <sender@mail.com>" recipient@mail.com
+
+
+echo "This is the message body and contains the message" | mailx -v -r "jinojoe@gmail.com" -s "subject" -S smtp="smtp.gmail.com:587" -S smtp-use-starttls -S smtp-auth=login -S smtp-auth-user="jinojoe@gmail.com" -S smtp-auth-password="KULANDAI.29" -S ssl-verify=ignore jinojoe@gmail.com
+
+sendemail -l email.log     \
+    -f "jinojoe@gmail.com"   \
+    -u "Email Test"     \
+    -t "linuxadmin@radiantcashservices.com" \
+    -s "smtp.gmail.com:587"  \
+    -o tls=yes \
+    -xu "jinojoe@gmail.com" \
+    -xp "KULANDAI.29" \
+    -o message-file="/tmp/mailbody.txt"
+
+
+#version=DEVEL
+# System authorization information
+auth --enableshadow --passalgo=sha512
+# Use CDROM installation media
+#cdrom
+ url --url=http://192.168.10.171/centos/7/
+# Use graphical install
+text
+#graphical
+# Run the Setup Agent on first boot
+firstboot --enable
+ignoredisk --only-use=sda
+# Keyboard layouts
+keyboard --vckeymap=us --xlayouts='us'
+# System language
+lang en_US.UTF-8
+
+# Network information
+network  --bootproto=dhcp --device=ens192 --ipv6=auto --activate
+network  --hostname=SkyVCL
+
+# Root password
+rootpw --iscrypted $6$iKuRzBrsHdIYAbA7$eP7rj1F76luxvADKmohS9nc.JE6XbHQD1Yr83UNO9cD8.tEV4iNnjo/UO44pSAp9aU6I/T4j7u.dJl1p3GktR.
+# System services
+services --enabled="chronyd"
+# System timezone
+timezone America/New_York --isUtc
+# System bootloader configuration
+bootloader --append=" crashkernel=auto" --location=mbr --boot-drive=sda
+autopart --type=lvm
+# Partition clearing information
+clearpart --none --initlabel
+
+%packages
+@^minimal
+@core
+chrony
+kexec-tools
+
+%end
+
+%addon com_redhat_kdump --enable --reserve-mb='auto'
+
+%end
+
+%anaconda
+pwpolicy root --minlen=6 --minquality=1 --notstrict --nochanges --notempty
+pwpolicy user --minlen=6 --minquality=1 --notstrict --nochanges --emptyok
+pwpolicy luks --minlen=6 --minquality=1 --notstrict --nochanges --notempty
+%end

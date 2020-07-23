@@ -1,0 +1,27 @@
+---
+- name: "Show CPU usage"
+  script: jjino.sh
+  register: result1
+
+- name: "Create the resilt use Jinja2 template"
+  template:
+    src: temp1.j2
+    dest: /home/ansible/cpu_usage.txt
+  delegate_to: "{{ delegate_host | default('localhost') }}"
+  #when: result1.stdout != ""
+
+- name: "Mail the result"
+  mail:
+    host: "{{smtp_host}}"
+    port: "{{smtp_port}}"
+    username: "{{smtp_username}}"
+    password: "{{smtp_password}}" 
+    to: "{{ email_to }}"
+    cc: "{{ email_cc }}"
+    subject: "{{client_name }} Memory Report"
+    body: "{{ lookup('file', '/home/ansible/cpu_usage.txt') }}"
+    #attach:
+    #  - /home/ansible/cpu_usage.txt
+  delegate_to: "{{ delegate_host | default('localhost') }}"
+  when: result1.stdout != ""
+  run_once: True

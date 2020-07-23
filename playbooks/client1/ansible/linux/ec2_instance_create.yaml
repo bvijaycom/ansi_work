@@ -1,0 +1,118 @@
+---
+- name: "To create aws instance"
+  hosts: localhost
+  ignore_errors: true
+  vars:
+    - key_name: JINO_N
+    - image: ami-011b3ccf1bd6db744
+    - vpc_subnet_id: subnet-f5d94692
+    - vpc_id: vpc-d12a82ab
+    - region: us-east-1
+    - security_group_name: load_balancer_security_group
+    - aws_secret_key: drMZIV1zy2CuE5PQIHs8yH7Rb5Q2X8+gl8djRpI0
+    - aws_access_key: AKIAIQHPKZYDLU3DAX6A
+  tasks:
+  - ec2:
+      aws_secret_key: "{{ aws_secret_key }}"
+      aws_access_key: "{{ aws_access_key }}"
+      key_name:  "{{key_name}}"
+      instance_type: t2.micro
+      image: "{{image}}"
+      count: 2
+      assign_public_ip: yes
+      vpc_subnet_id: "{{vpc_subnet_id}}"
+      group: default
+      region: "{{region}}"
+    register: jino
+
+  - debug:
+      msg: "{{jino | json_query('instances[].public_ip[]')}}"
+
+  - ec2_group:
+      aws_secret_key: "{{ aws_secret_key }}"
+      aws_access_key: "{{ aws_access_key }}"
+      name: "{{ security_group_name }}"
+      region: "{{ region }}"
+      vpc_id: "{{ vpc_id }}"
+      description: "{{ security_group_name }}"
+      rules:
+        - proto: tcp
+          from_port: 80
+          to_port: 80
+          cidr_ip: 0.0.0.0/0
+        - proto: tcp
+          from_port: 22
+          to_port: 22
+          cidr_ip: 0.0.0.0/0
+    register: jino_group
+
+  - name: "get availability zone"
+    aws_az_facts:
+      aws_secret_key: "{{ aws_secret_key }}"
+      aws_access_key: "{{ aws_access_key }}"
+      region: "{{region}}"
+    register: jino_region
+
+  - ec2_elb_lb:
+      aws_secret_key: "{{ aws_secret_key }}"
+      aws_access_key: "{{ aws_access_key }}"
+      name: loadbalancer
+      state: present
+      region: "{{region}}"
+      security_group_names:  "{{security_group_name}}"
+      zones: "{{item}}"
+      instance_ids: "{{jino.instance_ids}}"
+      listeners:
+        - protocol: http
+          load_balancer_port: 80
+          instance_port: 80
+      health_check:
+        ping_protocol: http
+        ping_port: 80
+        ping_path: "/index.html"
+        response_timeout: 5
+        interval: 30
+        unhealthy_threshold: 2
+        healthy_threshold: 10
+    with_items: "{{jino_region | json_query('availability_zones[].zone_name[]') }}"
+    register: jino_lb
+
+  - debug:
+      msg: "{{jino_lb | json_query('results[].elb[].dns_name[]')}}"
+
+  - name: Store EC2 instance IPs to provision against
+    add_host:
+      hostname: "{{ item }}"
+      groupname: ec2_instance
+      ansible_ssh_private_key_file: /home/at/.ssh/JINO_N.pem
+    with_items: "{{jino | json_query('instances[].public_ip[]')}}"
+
+  - name: Wait for servers to come online
+    wait_for:
+      host: "{{item}}"
+      port: 22
+      timeout: 180
+    with_items: "{{jino | json_query('instances[].public_ip[]')}}"
+
+- hosts: ec2_instance
+  remote_user: ec2-user
+  become: True
+  tasks:
+  - name: Install httpd
+    yum:
+      name: httpd
+      state: present
+
+  - name: "copy the condent"
+    copy:
+      dest: /var/www/html/index.html
+      content: "{{ ansible_hostname }}"
+
+  - name: start the service
+    service:
+      name: httpd
+      state: started
+
+  - name: "wait for LoadBalancer active stage"
+    wait_for:
+      timeout: 300

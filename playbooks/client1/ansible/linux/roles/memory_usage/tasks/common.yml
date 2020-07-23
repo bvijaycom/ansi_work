@@ -1,0 +1,23 @@
+---
+- name: "Show memory usage"
+  script: jjino.sh
+  register: result1
+
+- name: "Copy the (user) Memeory usage precentage"
+  template:
+    src: temp1.j2
+    dest: /tmp/memory_usage.txt
+  delegate_to: "{{ delegate_host | default('localhost') }}"
+  when: result1.stdout != ""
+
+- name: "Mail the Condent"
+  mail:
+    to: "{{email_to}}"
+    cc: "{{email_cc}}"
+    subject: "{{ client_name }} Memory Report"
+    attach:
+      - /tmp/memory_usage.txt
+    body: System has been generated memory report successfully.
+  delegate_to: "{{ delegate_host | default('localhost') }}"
+  when: result1.stdout != ""
+  run_once: True

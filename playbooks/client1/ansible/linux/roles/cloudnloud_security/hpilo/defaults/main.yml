@@ -1,0 +1,5 @@
+---
+hpilo_ip:
+hpilo_username:
+hpilo_password:
+template_staorage_path: /tmp/hpilo_info.txt

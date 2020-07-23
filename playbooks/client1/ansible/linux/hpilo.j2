@@ -1,0 +1,116 @@
+hw_bios_date                       : {{ results.ansible_facts.hw_bios_date }}
+hw_bios_version                    : {{ results.ansible_facts.hw_bios_version}}
+
+network adapter details:
+------------------------
+{% if results.ansible_facts.hw_eth0 != '' %}
+hw_eth0:
+  macaddress                       : {{ results.ansible_facts.hw_eth0.macaddress }}
+  macaddress_dash                  : {{ results.ansible_facts.hw_eth0.macaddress_dash }}
+{% endif %}
+  
+{% if results.ansible_facts.hw_eth1 != '' %}
+hw_eth1:
+  macaddress                       : {{ results.ansible_facts.hw_eth1.macaddress }}
+  macaddress_dash                  : {{ results.ansible_facts.hw_eth1.macaddress_dash }}
+{% endif %}
+  
+{% if results.ansible_facts.hw_eth2 != '' %}
+hw_eth2:
+  macaddress                       : {{ results.ansible_facts.hw_eth2.macaddress }}
+  macaddress_dash                  : {{ results.ansible_facts.hw_eth2.macaddress_dash }}
+{% endif %}
+
+{% if results.ansible_facts.hw_eth3 != '' %}
+hw_eth3:
+  macaddress                       : {{ results.ansible_facts.hw_eth3.macaddress }}
+  macaddress_dash                  : {{ results.ansible_facts.hw_eth3.macaddress_dash }}
+{% endif %}
+  
+{% if results.ansible_facts.hw_eth4 != '' %}
+hw_eth4:
+  macaddress                       : {{ results.ansible_facts.hw_eth4.macaddress }}
+  macaddress_dash                  : {{ results.ansible_facts.hw_eth4.macaddress_dash }}
+{% endif %}
+  
+{% if results.ansible_facts.hw_eth5 != '' %}
+hw_eth5:
+  macaddress                       : {{ results.ansible_facts.hw_eth5.macaddress }}
+  macaddress_dash                  : {{ results.ansible_facts.hw_eth5.macaddress_dash }}
+{% endif %}
+
+{% if results.ansible_facts.hw_eth_ilo != '' %}
+hw_eth_ilo:
+  macaddress                       : {{ results.ansible_facts.hw_eth_ilo.macaddress }}
+  macaddress_dash                  : {{ results.ansible_facts.hw_eth_ilo.macaddress_dash }}
+{% endif %}
+
+firmware_information:
+---------------------
+
+Embedded Video Controller                    : {{ results.ansible_facts.hw_health.firmware_information["Embedded Video Controller"]
+HP FlexFabric 10Gb 2port 534FLR-SFP+ Adapter : {{ results.ansible_facts.hw_health.firmware_information["HP FlexFabric 10Gb 2port 534FLR-SFP+ Adapter"]
+HPE Smart Array E208i-p SR Gen10             : {{ results.ansible_facts.hw_health.firmware_information["HPE Smart Array E208i-p SR Gen10"]
+HPE Smart Array P408i-a SR Gen1              : {{ results.ansible_facts.hw_health.firmware_information["HPE Smart Array P408i-a SR Gen1"]
+HPE Smart Storage Battery 1 Firmware         : {{ results.ansible_facts.hw_health.firmware_information["HPE Smart Array P408i-a SR Gen1"]
+HPE Smart Storage Battery 1 Firmware 
+
+
+
+
+
+Health_checkup:
+---------------
+
+battery_status                     : {{ results.ansible_facts.hw_health.health_at_a_glance.battery.status }}
+bios_hardware_status               : {{ results.ansible_facts.hw_health.health_at_a_glance.bios_hardware.status }}
+fan_status                         : {{ results.ansible_facts.hw_health.health_at_a_glance.fans.status }}
+memory_status                      : {{ results.ansible_facts.hw_health.health_at_a_glance.memory.status }}
+network_status                     : {{ results.ansible_facts.hw_health.health_at_a_glance.network.status }}
+power_supplies_status              : {{ results.ansible_facts.hw_health.health_at_a_glance.power_supplies.status }}
+processor_status                   : {{ results.ansible_facts.hw_health.health_at_a_glance.processor.status }}
+storage_status                     : {{ results.ansible_facts.hw_health.health_at_a_glance.storage.status }}
+temperature_status                 : {{ results.ansible_facts.hw_health.health_at_a_glance.temperature.status }}
+
+memory:
+--------
+
+amp_mode_status                    : {{ results.ansible_facts.hw_health.memory.advanced_memory_protection.amp_mode_status }}
+available_amp_modes                : {{ results.ansible_facts.hw_health.memory.advanced_memory_protection.available_amp_modes }}
+configured_amp_mode                : {{ results.ansible_facts.hw_health.memory.advanced_memory_protection.configured_amp_mode }}
+
+
+memory_details_summary:
+-----------------------
+cpu 1:
+
+number_of_sockets                  : {{ results.ansible_facts.hw_health.memory.memory_details_summary.cpu_1.number_of_sockets }}
+operating_frequency                : {{ results.ansible_facts.hw_health.memory.memory_details_summary.cpu_1.operating_frequency }}
+operating_voltage                  : {{ results.ansible_facts.hw_health.memory.memory_details_summary.cpu_1.operating_voltage }}
+total_memory_size                  : {{ results.ansible_facts.hw_health.memory.memory_details_summary.cpu_1.total_memory_size }}
+
+cpu 2:
+
+number_of_sockets                  : {{ results.ansible_facts.hw_health.memory.memory_details_summary.cpu_2.number_of_sockets }}
+operating_frequency                : {{ results.ansible_facts.hw_health.memory.memory_details_summary.cpu_2.operating_frequency }}
+operating_voltage                  : {{ results.ansible_facts.hw_health.memory.memory_details_summary.cpu_2.operating_voltage }}
+total_memory_size                  : {{ results.ansible_facts.hw_health.memory.memory_details_summary.cpu_1.total_memory_size }}
+
+
+nic_information:
+----------------
+
+ip_address                         : {{ results.ansible_facts.hw_health.nic_information.Embedded.ip_address  }}
+location                           : {{ results.ansible_facts.hw_health.nic_information.Embedded.location  }}
+mac_address                        : {{ results.ansible_facts.hw_health.nic_information.Embedded.mac_address }}
+network_port                       : {{ results.ansible_facts.hw_health.nic_information.Embedded.network_port }}
+port_description                   : {{ results.ansible_facts.hw_health.nic_information.Embedded.port_description }}
+status                             : {{ results.ansible_facts.hw_health.nic_information.Embedded.status }}
+
+power_supplies:
+----------------
+{{ results.ansible_facts.hw_health.power_supplies["Battery 1"].capacity }}
+
+
+
+

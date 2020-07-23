@@ -1,0 +1,7 @@
+---
+- name: "find memory usgae"
+  hosts: localhost
+  roles:
+  - role: memory_usage
+    delegate_host: localhost
+    client_name: skylark

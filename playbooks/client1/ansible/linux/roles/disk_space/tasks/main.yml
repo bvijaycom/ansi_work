@@ -1,0 +1,25 @@
+---
+- name: "Calculate Disk Space usage"
+  script: jino.sh
+  register: result1
+
+- name: "Copy the Disk usage precentage"
+  template:
+    src: temp1.j2
+    dest: /home/ansible/disk_usage.txt
+  delegate_to: "{{ delegate_host | default('localhost') }}"
+
+- name: "mail diskspace details"
+  mail:
+    to: "{{email_to}}"
+    host: "{{smtp_host}}" # smtp.gmail.com
+    port: "{{smtp_port}}" # 587
+    username: "{{smtp_username}}"
+    password: "{{smtp_password}}" 
+    cc: "{{email_cc}}"
+    subject: "{{client_name}} disk space Report"
+    attach:
+      - /home/ansible/disk_usage.txt
+    body: ansible server has been generated Disk Usage Report successfully.
+  delegate_to: "{{ delegate_host | default('localhost') }}"
+  run_once: True

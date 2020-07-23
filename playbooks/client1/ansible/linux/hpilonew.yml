@@ -1,0 +1,9 @@
+---
+- name: "get hpilo information"
+  hosts: localhost
+  roles:
+    - role: hpilo
+      hpilo_ip: 192.168.20.11
+      hpilo_username: Administrator
+      hpilo_password: Admin@123
+      template_staorage_path: /home/ansible/ansible/hpilo_info.txt

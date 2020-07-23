@@ -1,0 +1,143 @@
+Server IP: 192.168.1.2
+              192.168.1.1
+              255.255.255.0
+hostname : pxe-server
+
+Pre-requisites
+
+    dhcp
+    tftp-server
+    syslinux
+    http/ftp (any one)
+
+
+Install the required packages using yum
+
+# setenforce 0
+# systemctl stop firewalld
+
+
+# yum -y install dhcp tftp-server syslinux httpd xinetd
+
+Let us create separate directory to save all the installation files
+
+# mkdir -p /var/lib/tftpboot/images/centos/7
+
+# mount centos7.iso /opt
+
+# cp -r /opt/* /var/lib/tftpboot/images/centos/7/
+
+# chmod -R 755 /var/lib/tftpboot/images/centos
+
+# umount /opt
+
+Edit httpd global document
+
+ vi /etc/httpd/conf/httpd.conf
+
+    DocumentRoot "/var/www/html" ---> DocumentRoot "/var/lib/tftpboot/images/"
+    <Directory "/var/www/html">  ---> <Directory "/var/lib/tftpboot/images/">
+
+save and restart the service
+
+# systemctl restart httpd
+
+Now check with browser. able to access or not
+
+Configure TFTP server:
+
+Once these packages are installed copy the below files from the specified directory to /var/lib/tftpboot
+
+# cp /usr/share/syslinux/pxelinux.0     /var/lib/tftpboot/
+# cp /usr/share/syslinux/chain.c32     /var/lib/tftpboot/
+# cp /usr/share/syslinux/menu.c32     /var/lib/tftpboot/
+# cp /usr/share/syslinux/memdisk     /var/lib/tftpboot/
+# cp /usr/share/syslinux/mboot.c32     /var/lib/tftpboot/
+
+
+Next we will create the configuration file required for tftp server
+
+# mkdir /var/lib/tftpboot/pxelinux.cfg
+
+Create a new file "default" under "/var/lib/tftpboot/pxelinux.cfg" and add the
+below entry
+
+For HTTP server
+# vi /var/lib/tftpboot/pxelinux.cfg/default
+
+DEFAULT menu.c32
+PROMPT 0
+TIMEOUT 100
+ONTIMEOUT Local
+
+MENU TITLE PXE Menu
+
+MENU seperator
+LABEL CentOS 7
+KERNEL images/centos/7/images/pxeboot/vmlinuz
+APPEND initrd=images/centos/7/images/pxeboot/initrd.img method=http://192.168.1.2/centos/7 devfs=nomount
+
+MENU seperator
+LABEL Local
+LOCALBOOT 0
+
+Enable the tftp service in xinetd
+# vi /etc/xinetd.d/tftp
+service tftp
+{
+        socket_type             = dgram
+        protocol                = udp
+        wait                    = yes
+        user                    = root
+        server                  = /usr/sbin/in.tftpd
+        server_args             = -s /var/lib/tftpboot
+       disable                 = yes -----------------------------> change to no
+        per_source              = 11
+        cps                     = 100 2
+        flags                   = IPv4
+}
+
+
+
+ Restart the relevant services
+
+# systemctl restart xinetd
+# systemctl restart tftp
+
+Configure DHCP server:
+
+vim /etc/dhcp/dhcpd.conf
+
+ddns-update-style interim;
+ignore client-updates;
+authoritative;
+allow booting;
+allow bootp;
+allow unknown-clients;
+
+subnet 192.168.1.0
+netmask 255.255.255.0
+{
+range 192.168.1.10 192.168.1.70;
+option domain-name-servers 192.168.1.2;
+option domain-name "pxe-server";
+option routers 192.168.1.2;
+option broadcast-address 192.168.47.255;
+default-lease-time 600;
+max-lease-time 7200;
+
+        next-server 192.168.1.2;
+        filename "pxelinux.0";
+}
+
+
+Restart the dhcpd services
+
+# systemctl restart dhcpd
+
+restart all services
+
+# systemctl restart dhcpd
+# systemctl resatrt httpd
+# systemctl restart xinetd
+# systemctl restart tftp

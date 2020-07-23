@@ -1,0 +1,9 @@
+{% if result.results != [] %}
+{% for url_list in result.results | json_query('[]') %}
+{% if url_list.status != 200 %}
+url name   : {{url_list.item}}
+status code: {{ url_list.status }}
+state      : failed
+{% endif %}
+{% endfor %}
+{% endif %}

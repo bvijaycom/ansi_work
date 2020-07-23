@@ -1,0 +1,9 @@
+---
+- name: "get hpilo information"
+  hosts: localhost
+  roles:
+    - role: hpilo
+      hpilo_ip:
+      hpilo_username:
+      hpilo_password:
+      template_staorage_path: /tmp/hpilo_info.txt

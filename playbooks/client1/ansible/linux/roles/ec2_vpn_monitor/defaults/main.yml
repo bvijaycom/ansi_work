@@ -1,0 +1,6 @@
+---
+delegate_host: localhost
+client_name: Skylark
+#Alert Genarate
+slack_alert: true
+mail_alert: true

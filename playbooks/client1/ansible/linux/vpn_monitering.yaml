@@ -1,0 +1,5 @@
+---
+- hosts: localhost
+  tasks:
+  - name: "get all vpn information"
+    ec2_vpc_vpn_facts:

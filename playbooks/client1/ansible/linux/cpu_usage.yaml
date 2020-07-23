@@ -1,0 +1,7 @@
+me: "find cpu usgae"
+  hosts: localhost
+  roles:
+  - role: cpu_usage
+    delegate_host: localhost
+    email_to: jinojoe@gmail.com
+    email_cc: jinojoe@gmail.com

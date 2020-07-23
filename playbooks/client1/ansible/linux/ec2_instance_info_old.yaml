@@ -1,0 +1,14 @@
+---
+- name: "EC2 Instance Information"
+  hosts: localhost
+  roles:
+  - role: ec2_instance_info
+    delegate_host: localhost
+    email_to: jinojoe@gmail.com
+    email_cc: jinojoe@rediffmail.com
+    aws_access_key: AKIA6DTHLTSBJZH5LJTZ
+    aws_secret_key: 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
+    region: us-east-1
+    mail_alert: true
+    slack_alert: false
+    template_storage_path: /home/ansible/ansible/info.txt
