@@ -9,8 +9,8 @@
     - vpc_id: vpc-d12a82ab
     - region: us-east-1
     - security_group_name: load_balancer_security_group
-    - aws_secret_key: drMZIV1zy2CuE5PQIHs8yH7Rb5Q2X8+gl8djRpI0
-    - aws_access_key: AKIAIQHPKZYDLU3DAX6A
+    - aws_secret_key: take_care_bro
+    - aws_access_key: never_publish_your_keys
   tasks:
   - ec2:
       aws_secret_key: "{{ aws_secret_key }}"
